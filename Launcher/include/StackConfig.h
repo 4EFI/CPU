@@ -1,5 +1,5 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef STACK_CONFIG_H
+#define STACK_CONFIG_H
 
 #include <stdint.h>
 

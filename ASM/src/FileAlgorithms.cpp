@@ -8,6 +8,8 @@
 #include <assert.h>
 #include <algorithm>
 
+#define NASSERT
+
 //-----------------------------------------------------------------------------
 
 bool OpenFile (FILE** file, const char* fileName, 
@@ -59,7 +61,7 @@ long int GetFileSizeFromStat (FILE* file)
     assert (file != NULL);
     //}
 
-    struct stat fileInfo = {};
+    struct stat fileInfo = {0};
 
     fstat (fileno (file), &fileInfo);
 

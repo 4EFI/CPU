@@ -16,8 +16,6 @@
 
 void TextInit(Text* text)
 {
-    LOG ("asdf");
-    
     text->isCopyStr   = true;
     text->isCopyLines = true;
     
