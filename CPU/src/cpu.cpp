@@ -28,7 +28,7 @@ int CpuGetCmdsArr (CPU* cpu, FILE* file)
     fscanf (file, "%*s %*d");
     fscanf (file, "%d ", &cpu->codeSize);
 
-    LOG ("Code Size = %d", cpu->codeSize);
+    FLOG ("Code Size = %d", cpu->codeSize);
 
     cpu->code = (char*)calloc (cpu->codeSize, sizeof (char));
 
@@ -62,15 +62,32 @@ int CpuCmdsHandler (CPU* cpu)
             }
 
             case ADD:
-                StackPush (&cpu->stack, StackPop (&cpu->stack) + StackPop (&cpu->stack));
+                StackPush (&cpu->stack,  StackPop (&cpu->stack) + StackPop (&cpu->stack));
                 break;
+
+            case SUB:
+                StackPush (&cpu->stack, -StackPop (&cpu->stack) + StackPop (&cpu->stack));
+                break;
+
+            case MUL:
+                StackPush (&cpu->stack,  StackPop (&cpu->stack) * StackPop (&cpu->stack));
+                break;
+
+            case DIV:
+            {
+                Elem_t val_2 = StackPop (&cpu->stack), val_1 = StackPop (&cpu->stack);
+                
+                StackPush (&cpu->stack, val_1 / val_2);
+                break;
+            }
 
             case OUT:
                 printf ("%d\n", StackPop (&cpu->stack));
                 break;
-        }
 
-        StackDump (&cpu->stack);
+            case HLT:
+                break;
+        }
     }
     
     return 1;
