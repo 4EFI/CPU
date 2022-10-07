@@ -1,0 +1,18 @@
+--------------------Fri Oct 07 21:52:04 2022--------------------
+-------------------------Start StackDump-------------------------
+int _StackCtor(Stack_t*, int, const char*, const char*, const char*) at src/Stack.cpp(118)
+Stack[0064FE98] (ok) "cpu->stack" at src/cpu.cpp at int CpuCtor(CPU*)
+{
+    hashValue = 38654711081;
+    size      = 0;
+    capacity  = 1;
+
+    data[00951620]
+    {
+         [0] = NAN (POISON)
+    }
+}
+-----------------------------------------------------------------
+End of Log!
+--------------------Fri Oct 07 21:54:44 2022--------------------
+End of Log!
