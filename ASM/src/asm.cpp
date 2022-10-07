@@ -106,6 +106,46 @@ int AsmMakeArrCmds (ASM* asm_s)
 
 //-----------------------------------------------------------------------------
 
+Elem_t AsmArgHandler (ASM* asm_s, int ip, int curLine, int numSkipSyms)
+{
+    CMD cmd = {0};
+    
+    Elem_t val = 0;
+    char reg_i[MaxRegLen] = "";
+
+    char* strToRead = asm_s->text.lines[curLine].str + numSkipSyms; // Str for reading from it 
+    
+    if      (sscanf (strToRead, "%d", &val))
+    {
+        cmd.immed = true;
+    }
+    else if (sscanf (strToRead, "%s", reg_i))
+    {
+        if (strlen (reg_i) == RegLen) 
+        {
+            cmd.reg = true;
+
+            *(Elem_t*)(asm_s->code + ip) = GetRegIndex (reg_i);
+        }
+    }
+
+    asm_s->code[ip];
+}
+
+//-----------------------------------------------------------------------------
+
+int GetRegIndex (const char* reg)
+{
+    if (stricmp (cmd, "rax") == 0) return RAX;
+    if (stricmp (cmd, "rbx") == 0) return RBX;
+    if (stricmp (cmd, "rcx") == 0) return RCX;
+    if (stricmp (cmd, "rdx") == 0) return RDX; 
+
+    return 0;
+}
+
+//-----------------------------------------------------------------------------
+
 int AsmMakeOutFile (ASM* asm_s, FILE* fileOut)
 {   
     // signature, version, number of commands -> out file

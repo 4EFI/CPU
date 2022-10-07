@@ -13,7 +13,7 @@ int main()
     CPU cpu = {0};
     CpuCtor (&cpu);
 
-    //CheckSignature (file);
+    //CheckCompatibility (file);
 
     CpuGetCmdsArr  (&cpu, file);
     CpuCmdsHandler (&cpu);    

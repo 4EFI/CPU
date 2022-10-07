@@ -2,7 +2,17 @@
 #define CONFIG_H
 
 //-----------------------------------------------------------------------------
-                
+
+static int RegLen = 3;
+
+enum Reg_i
+{
+    RAX = 1,
+    RBX,
+    RCX, 
+    RDX
+};
+
 struct CMD
 {
     char code   : 4;
@@ -11,7 +21,7 @@ struct CMD
     char unused : 2;
 };
 
-//#define NDUMP
+#define NDUMP
 //#define NHASH
 //#define NCANARY
 
