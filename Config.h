@@ -1,11 +1,16 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include "asm.h"
-
 //-----------------------------------------------------------------------------
 
-Signature AsmSignature = {"HEHE", 1};
+//#define NDUMP
+//#define NHASH
+//#define NCANARY
+
+typedef int Elem_t;
+
+static char Signature[] = "SP"; // Super paper
+static int  Version     = 1;
 
 enum CmdNames
 {

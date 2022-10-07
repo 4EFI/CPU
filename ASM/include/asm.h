@@ -11,28 +11,20 @@ static const int MaxCmdLen = 5;
 
 //-----------------------------------------------------------------------------
 
-struct Signature
+struct ASM
 {
-    char* specialWord;
-    int   version;
-};
-
-struct Asm
-{
-    Signature signature;
-
     Text text;
 
-    int  numCmds;
-    int* arrCmds;
+    int   codeSize;
+    char* code;
 };
 
-int AsmCtor (Asm* asm_s);
-int AsmDtor (Asm* asm_s);
+int AsmCtor (ASM* asm_s);
+int AsmDtor (ASM* asm_s);
 
-int AsmGetCmds     (Asm* asm_s, FILE* fileIn);
-int AsmMakeArrCmds (Asm* asm_s);
-int AsmMakeOutFile (Asm* asm_s, FILE* fileOut);
+int AsmGetCmds     (ASM* asm_s, FILE* fileIn);
+int AsmMakeArrCmds (ASM* asm_s);
+int AsmMakeOutFile (ASM* asm_s, FILE* fileOut);
 
 //-----------------------------------------------------------------------------
 

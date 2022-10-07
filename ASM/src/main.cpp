@@ -7,7 +7,7 @@ int main ()
     FILE* fileIn  = fopen ("../a.txt",  "r");
     FILE* fileOut = fopen ("../a.code", "wb");
 
-    Asm asm_s = {0};
+    ASM asm_s = {0};
     AsmCtor (&asm_s);
 
     AsmGetCmds (&asm_s, fileIn);
