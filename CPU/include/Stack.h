@@ -1,7 +1,7 @@
 #ifndef STACK_H
 #define STACK_H
 
-#include "StackConfig.h"
+#include "config.h"
 
 #include <stdio.h>
 #include <string.h>

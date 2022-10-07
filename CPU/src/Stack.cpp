@@ -182,7 +182,7 @@ int StackErrHandler (Stack_t* stack)
 {
     Assert (stack != NULL, -1);
     
-    stack->info.errStatus = 0;    
+    //stack->info.errStatus = 0;    
     
     if (!stack->data) 
     {       
@@ -344,6 +344,7 @@ int StackResize (Stack_t* stack, int numResize, int sideResize)
 {
     Assert          (stack != NULL, 0); 
     StackErrHandler (stack); 
+    StackDump       (stack);
 
     switch (sideResize)
     {
@@ -363,6 +364,8 @@ int StackResize (Stack_t* stack, int numResize, int sideResize)
         return -1;
         break;
     }
+
+    numResize = (numResize > 0 ? numResize : 1);
      
     StackRecalloc (stack, numResize * sizeof (Elem_t), DataLeftCanaryValue, DataRightCanaryValue);
 
@@ -409,7 +412,9 @@ void StackRecalloc (Stack_t* stack, size_t size, uint64_t leftCanary, uint64_t r
 void StackPush (Stack_t* stack, Elem_t value)
 {
     Assert          (stack != NULL); 
+
     StackErrHandler (stack);
+    StackDump       (stack);
 
     if (!stack->info.isStackValid) return;
 
@@ -429,18 +434,20 @@ void StackPush (Stack_t* stack, Elem_t value)
 Elem_t StackPop (Stack_t* stack)
 {
     Assert          (stack != NULL, StackDataPoisonValue); 
-    StackErrHandler (stack);
 
-    if (!stack->info.isStackValid) return 0;
+    StackErrHandler (stack);
+    StackDump       (stack);
+
+    if (!stack->info.isStackValid) { LOG ("444444444"); return 0; }
 
     if (stack->size > 0) 
     {
-        stack->size--;   
-
-        if (stack->size <= size_t(stack->capacity / (2*stack->info.stepResize)))   
+        if (stack->size - 1 <= size_t(stack->capacity / (2*stack->info.stepResize)))   
         {
             StackResize (stack, 0, ResizeDown);
         }  
+
+        stack->size--;   
 
         ON_HASH_PROTECTION ( stack->info.hashValue = StackHashProtection (stack); )
         

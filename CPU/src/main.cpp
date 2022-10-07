@@ -2,6 +2,13 @@
 
 #include "cpu.h"
 
+/*
+push 1
+push 2
+add
+div
+*/
+
 //-----------------------------------------------------------------------------
 
 int main()
@@ -15,9 +22,8 @@ int main()
 
     //CheckSignature (file);
 
-    CpuGetCmdsArr (&cpu, file);
-
-    //CmdsHandler (cmds);    
+    CpuGetCmdsArr  (&cpu, file);
+    CpuCmdsHandler (&cpu);    
 }
 
 //-----------------------------------------------------------------------------

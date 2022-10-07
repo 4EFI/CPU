@@ -2,6 +2,14 @@
 #define CONFIG_H
 
 //-----------------------------------------------------------------------------
+                
+struct CMD
+{
+    char code   : 4;
+    char immed  : 1;
+    char reg    : 1;
+    char unused : 2;
+};
 
 //#define NDUMP
 //#define NHASH

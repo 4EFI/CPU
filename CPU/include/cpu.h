@@ -15,8 +15,9 @@ struct CPU
     char* code;
 };
 
-int CpuCtor       (CPU* cpu);
-int CpuGetCmdsArr (CPU* cpu, FILE* file);
+int CpuCtor        (CPU* cpu);
+int CpuGetCmdsArr  (CPU* cpu, FILE* file);
+int CpuCmdsHandler (CPU* cpu);
 
 //-----------------------------------------------------------------------------
 
