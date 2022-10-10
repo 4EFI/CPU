@@ -71,7 +71,6 @@ Elem_t* CpuGetArg (CPU* cpu, int* ip, Elem_t* val)
     if (cmd.memory)
     {
         // Check val
-        
         arg_ptr = &cpu->RAM[*val];
     }
 
@@ -94,55 +93,20 @@ int CpuCmdsHandler (CPU* cpu)
         Elem_t  arg_val = 0;
         Elem_t* arg_ptr = CpuGetArg (cpu, &ip, &arg_val);
 
+        #define DEF_CMD(NAME, NUM, ...) \
+            case CMD_##NAME:            \
+                __VA_ARGS__             \
+                break;
+
         switch (cmd.code)
         {
-            case CMD_PUSH:
-                StackPush (&cpu->stack, arg_val);
-                break;
-
-            case CMD_POP:
-                *arg_ptr = StackPop (&cpu->stack);
-                break;
-
-            case CMD_ADD:
-                // if (arg_val != NULL)
-                StackPush (&cpu->stack,  StackPop (&cpu->stack) + StackPop (&cpu->stack));
-                break;
-
-            case CMD_SUB:
-                StackPush (&cpu->stack, -StackPop (&cpu->stack) + StackPop (&cpu->stack));
-                break;
-
-            case CMD_MUL:
-                StackPush (&cpu->stack,  StackPop (&cpu->stack) * StackPop (&cpu->stack));
-                break;
-
-            case CMD_DIV:
-            {
-                Elem_t val_2 = StackPop (&cpu->stack), val_1 = StackPop (&cpu->stack);
-                
-                StackPush (&cpu->stack, val_1 / val_2);
-                break;
-            }
-
-            case CMD_JMP:
-                ip = arg_val;
-                break;
-
-            case CMD_OUT:
-                if (arg_ptr)
-                {
-                    if /**/ (cmd.memory) printf ("RAM[%d] = %d\n",  arg_ptr - cpu->RAM,  *arg_ptr);
-                    else if (cmd.reg)    printf ("Regs[%d] = %d\n", arg_ptr - cpu->regs, *arg_ptr);
-                }
-                else printf ("%d\n", StackPop (&cpu->stack));
-
-                break;
-
-            case CMD_HLT:
-                return 0;
+            #include "Commands.h"
+            default:
+                // Error
                 break;
         }
+
+        #undef DEF_CMD
     }
     
     return 1;

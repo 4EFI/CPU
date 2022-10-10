@@ -62,7 +62,7 @@ int AsmMakeArrCmds (ASM* asm_s)
         CMD* cmd = (CMD*)(&asm_s->code[ipCopy]);
 
         // Compare commands
-        #define DEF_CMD(NAME, NUM)             \
+        #define DEF_CMD(NAME, NUM, ...)        \
             if (stricmp (cmdName, #NAME) == 0) \
             {                                  \
                 cmd->code = NUM;               \
@@ -80,8 +80,6 @@ int AsmMakeArrCmds (ASM* asm_s)
     }
 
     asm_s->codeSize = ip;
-
-    LOG ("Code size = %d", ip);
 
     return 1;
 }
