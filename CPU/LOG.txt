@@ -1,87 +1,31 @@
---------------------Mon Oct 10 20:05:09 2022--------------------
-00| src/cpu.cpp:35: Code Size = 32
+--------------------Mon Oct 10 23:14:19 2022--------------------
+--------------------Mon Oct 10 23:16:34 2022--------------------
+--------------------Mon Oct 10 23:16:58 2022--------------------
+--------------------Mon Oct 10 23:17:24 2022--------------------
+00| src/cpu.cpp:36: Code Size = 47
+00| src/cpu.cpp:92: code = 1 i = 1 r = 0 m = 0
+00| src/cpu.cpp:92: code = 7 i = 0 r = 1 m = 0
+00| src/cpu.cpp:92: code = 1 i = 1 r = 1 m = 0
+00| src/cpu.cpp:92: code = 7 i = 1 r = 0 m = 1
+00| src/cpu.cpp:92: code = 6 i = 1 r = 0 m = 1
+00| src/cpu.cpp:92: code = 1 i = 1 r = 0 m = 0
+00| src/cpu.cpp:92: code = 7 i = 0 r = 1 m = 0
+00| src/cpu.cpp:92: code = 1 i = 0 r = 1 m = 0
+00| src/cpu.cpp:92: code = 1 i = 0 r = 1 m = 0
+00| src/cpu.cpp:92: code = 4 i = 0 r = 0 m = 0
+00| src/cpu.cpp:92: code = 6 i = 0 r = 0 m = 0
+00| src/cpu.cpp:92: code = 1 i = 0 r = 1 m = 0
+00| src/cpu.cpp:92: code = 1 i = 1 r = 0 m = 0
+00| src/cpu.cpp:92: code = 2 i = 0 r = 0 m = 0
+00| src/cpu.cpp:92: code = 7 i = 0 r = 1 m = 0
+00| src/cpu.cpp:92: code = 0 i = 0 r = 0 m = 0
 End of Log!
---------------------Mon Oct 10 20:28:01 2022--------------------
-00| src/cpu.cpp:35: Code Size = 32
+--------------------Mon Oct 10 23:17:52 2022--------------------
+00| src/cpu.cpp:36: Code Size = 47
 End of Log!
---------------------Mon Oct 10 20:28:21 2022--------------------
-00| src/cpu.cpp:35: Code Size = 32
+--------------------Mon Oct 10 23:19:25 2022--------------------
+00| src/cpu.cpp:36: Code Size = 47
 End of Log!
---------------------Mon Oct 10 20:31:58 2022--------------------
-00| src/cpu.cpp:35: Code Size = 29
-End of Log!
---------------------Mon Oct 10 20:32:12 2022--------------------
-00| src/cpu.cpp:35: Code Size = 29
-End of Log!
---------------------Mon Oct 10 20:53:58 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 20:54:23 2022--------------------
-00| src/cpu.cpp:35: Code Size = 37
-End of Log!
---------------------Mon Oct 10 20:54:36 2022--------------------
-00| src/cpu.cpp:35: Code Size = 37
-End of Log!
---------------------Mon Oct 10 20:54:43 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 20:55:00 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 20:55:17 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 20:56:02 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 20:56:15 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 20:56:36 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 20:56:58 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 20:58:56 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 21:00:06 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 21:00:23 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 21:01:04 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 21:01:31 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 21:02:17 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 21:02:55 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 21:12:45 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 21:13:00 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 21:23:28 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 21:23:40 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 21:23:53 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 21:24:16 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
-End of Log!
---------------------Mon Oct 10 21:30:55 2022--------------------
-00| src/cpu.cpp:35: Code Size = 38
+--------------------Mon Oct 10 23:20:07 2022--------------------
+00| src/cpu.cpp:36: Code Size = 33
 End of Log!

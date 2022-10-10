@@ -5,6 +5,7 @@
 
 static const int NumRegs   = 5;
 static const int NumLabels = 20;
+static const int RamSize   = 100;
 
 static const int MaxStrLen = 255;
 
@@ -19,11 +20,10 @@ enum Reg_i
 
 struct CMD
 {
-    unsigned char code   : 4;
+    unsigned char code   : 5;
     unsigned char immed  : 1;
     unsigned char reg    : 1;
     unsigned char memory : 1;
-    unsigned char unused : 1;
 };
 
 #define NDUMP

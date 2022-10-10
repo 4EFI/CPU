@@ -47,6 +47,8 @@ int GetNumStrs (const char* str, char symNewLine = '\n');
 int NumLeftIgnoredSyms  (const char* str, const char* ignoredSymbols = IgnoredSymbols);
 int NumRightIgnoredSyms (const char* str, const char* ignoredSymbols = IgnoredSymbols);
 
+char* CheckSymInStr (const char* str, char sym, const char* ignSyms);
+
 int RemoveIgnoredSyms (char** str, int iBegin, int iEnd);
 
 void BubbleSort (void* arr, size_t num, size_t size, int (*comparator)(const void* arr1, const void* arr2));

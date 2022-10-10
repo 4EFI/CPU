@@ -14,6 +14,7 @@ int CpuCtor (CPU* cpu)
     StackCtor (&cpu->stack, 1);
 
     // Fill all with zero
+    memset (cpu->RAM,    0, RamSize   * sizeof (Elem_t));
     memset (cpu->regs,   0, NumRegs   * sizeof (Elem_t));
     memset (cpu->labels, 0, NumLabels * sizeof (Label) );
 
@@ -69,7 +70,9 @@ Elem_t* CpuGetArg (CPU* cpu, int* ip, Elem_t* val)
 
     if (cmd.memory)
     {
-        // 
+        // Check val
+        
+        arg_ptr = &cpu->RAM[*val];
     }
 
     return arg_ptr;  
@@ -85,6 +88,8 @@ int CpuCmdsHandler (CPU* cpu)
     {
         CMD cmd = {0};
         *(char*)(&cmd) = cpu->code[ip];
+
+        //LOG ("code = %d i = %d r = %d m = %d", cmd.code, cmd.immed, cmd.reg, cmd.memory);
 
         Elem_t  arg_val = 0;
         Elem_t* arg_ptr = CpuGetArg (cpu, &ip, &arg_val);
@@ -125,7 +130,13 @@ int CpuCmdsHandler (CPU* cpu)
                 break;
 
             case CMD_OUT:
-                printf ("%d\n", StackPop (&cpu->stack));
+                if (arg_ptr)
+                {
+                    if /**/ (cmd.memory) printf ("RAM[%d] = %d\n",  arg_ptr - cpu->RAM,  *arg_ptr);
+                    else if (cmd.reg)    printf ("Regs[%d] = %d\n", arg_ptr - cpu->regs, *arg_ptr);
+                }
+                else printf ("%d\n", StackPop (&cpu->stack));
+
                 break;
 
             case CMD_HLT:

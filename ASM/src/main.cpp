@@ -14,4 +14,7 @@ int main ()
 
     AsmMakeArrCmds (&asm_s);
     AsmMakeOutFile (&asm_s, fileOut);
+
+    fclose (fileIn);
+    fclose (fileOut);
 }

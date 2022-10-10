@@ -196,6 +196,23 @@ int NumRightIgnoredSyms (const char* str, const char* ignoredSymbols)
 
 //-----------------------------------------------------------------------------
 
+char* CheckSymInStr (const char* str, char sym, const char* ignSyms)
+{
+    for (int i = 0; ; i++)
+    {
+        if (str[i] == '\0') break;
+
+        if (strchr (ignSyms, str[i])) continue;
+
+        if (str[i] == sym) return (char*)(&str[i]); 
+        else break;
+    }  
+
+    return 0;
+}
+
+//-----------------------------------------------------------------------------
+
 void BubbleSort (void* arr, size_t num, size_t size, int (*comparator)(const void* arr1, const void* arr2))
 {
     $LOG_LVL_UP

@@ -81,6 +81,8 @@ int AsmMakeArrCmds (ASM* asm_s)
 
     asm_s->codeSize = ip;
 
+    LOG ("Code size = %d", ip);
+
     return 1;
 }
 
@@ -95,8 +97,17 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
     Elem_t val = 0;
     char reg_i[MaxStrLen] = "";
 
-    if /**/ (sscanf (strForRead, "%d + %s",    &val,    reg_i) == 2 || 
-             sscanf (strForRead, " %[^+] + %d", reg_i, &val  ) == 2) // if (value + reg_value) || (reg_value + value)
+    bool isStartMem = false;
+    
+    // check [
+    char* sym = strchr (strForRead, '[');
+    
+    int numSkipSyms = 0;
+    if (sym) { isStartMem = true; numSkipSyms = sym - strForRead + 1; }
+
+    if /**/ (sscanf (strForRead + numSkipSyms, "%d + %s",    &val,    reg_i) == 2 || 
+             sscanf (strForRead + numSkipSyms, " %[^+] + %d", reg_i, &val  ) == 2) 
+    /* if (value + reg_value) || (reg_value + value) */
     {
         cmd->immed = 1;
         cmd->reg   = 1;
@@ -108,7 +119,7 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
         asm_s->code[(*ip)++] = GetRegIndex (reg_i);
     }
 
-    else if (sscanf (strForRead, "%d", &val) == 1) // if value
+    else if (sscanf (strForRead + numSkipSyms, "%d", &val) == 1) // if value
     {   
         cmd->immed = 1;
 
@@ -117,14 +128,17 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
         (*ip) += sizeof (Elem_t); 
     }
     
-    else if (sscanf (strForRead, "%s", reg_i) == 1) // if register
+    else if (sscanf (strForRead + numSkipSyms, "%s", reg_i) == 1) // if register
     {    
         cmd->reg = 1;
 
         asm_s->code[(*ip)++] = GetRegIndex (reg_i);
     }
 
-    FLOG ("code = %d i = %d r = %d", cmd->code, cmd->immed, cmd->reg);
+    // Check ]
+    if (isStartMem && strchr (strForRead + numSkipSyms, ']')) cmd->memory = 1; 
+
+    FLOG ("i = %d r = %d m = %d", cmd->immed, cmd->reg, cmd->memory);
 
     return 1;
 }
@@ -135,7 +149,7 @@ int GetRegIndex (const char* reg)
 {
     if (reg == NULL) return 0;
 
-    int numRightIgnSyms = NumRightIgnoredSyms (reg, " ");
+    int numRightIgnSyms = NumRightIgnoredSyms (reg, " ]");
 
     int len = strlen (reg) - numRightIgnSyms;
     

@@ -16,6 +16,8 @@ struct Label
 
 struct CPU
 {
+    Elem_t RAM[RamSize];
+    
     Elem_t regs  [NumRegs];
     Label  labels[NumLabels];
     
