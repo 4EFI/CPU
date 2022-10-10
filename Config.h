@@ -3,9 +3,8 @@
 
 //-----------------------------------------------------------------------------
 
-static const int RegLen    = 3;
 static const int NumRegs   = 5;
-static const int NumLabels = 5;
+static const int NumLabels = 20;
 
 static const int MaxStrLen = 255;
 

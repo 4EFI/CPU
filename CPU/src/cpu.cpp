@@ -91,28 +91,28 @@ int CpuCmdsHandler (CPU* cpu)
 
         switch (cmd.code)
         {
-            case PUSH:
+            case CMD_PUSH:
                 StackPush (&cpu->stack, arg_val);
                 break;
 
-            case POP:
+            case CMD_POP:
                 *arg_ptr = StackPop (&cpu->stack);
                 break;
 
-            case ADD:
+            case CMD_ADD:
                 // if (arg_val != NULL)
                 StackPush (&cpu->stack,  StackPop (&cpu->stack) + StackPop (&cpu->stack));
                 break;
 
-            case SUB:
+            case CMD_SUB:
                 StackPush (&cpu->stack, -StackPop (&cpu->stack) + StackPop (&cpu->stack));
                 break;
 
-            case MUL:
+            case CMD_MUL:
                 StackPush (&cpu->stack,  StackPop (&cpu->stack) * StackPop (&cpu->stack));
                 break;
 
-            case DIV:
+            case CMD_DIV:
             {
                 Elem_t val_2 = StackPop (&cpu->stack), val_1 = StackPop (&cpu->stack);
                 
@@ -120,15 +120,15 @@ int CpuCmdsHandler (CPU* cpu)
                 break;
             }
 
-            case JMP:
+            case CMD_JMP:
                 ip = arg_val;
                 break;
 
-            case OUT:
+            case CMD_OUT:
                 printf ("%d\n", StackPop (&cpu->stack));
                 break;
 
-            case HLT:
+            case CMD_HLT:
                 return 0;
                 break;
         }

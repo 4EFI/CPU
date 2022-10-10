@@ -1,3 +1,9 @@
+push 10
+pop rax
+
+push rax + 1    
+out
+
 push 1
 pop rax
 
@@ -10,6 +16,5 @@ push rax
 push 1
 add
 pop rax
-jmp 7
 
 hlt
