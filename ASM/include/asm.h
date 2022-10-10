@@ -25,10 +25,10 @@ struct ASM
 int AsmCtor (ASM* asm_s);
 int AsmDtor (ASM* asm_s);
 
-int    AsmGetCmds     (ASM* asm_s, FILE* fileIn);
-Elem_t AsmArgHandler  (ASM* asm_s, int ip, int curLine, int numSkipSyms);
-int    AsmMakeArrCmds (ASM* asm_s);
-int    AsmMakeOutFile (ASM* asm_s, FILE* fileOut);
+int AsmGetCmds     (ASM* asm_s, FILE* fileIn);
+int AsmArgHandler  (ASM* asm_s, const char* strForRead, int* ip);
+int AsmMakeArrCmds (ASM* asm_s);
+int AsmMakeOutFile (ASM* asm_s, FILE* fileOut);
 
 int GetRegIndex (const char* reg);
 

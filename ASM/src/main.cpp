@@ -4,8 +4,8 @@
 
 int main ()
 {
-    FILE* fileIn  = fopen ("../a.txt",  "r");
-    FILE* fileOut = fopen ("../a.code", "wb");
+    FILE* fileIn  = fopen ("../Examples/number_squares.txt", "r");
+    FILE* fileOut = fopen ("../Examples/number_squares.code", "wb");
 
     ASM asm_s = {0};
     AsmCtor (&asm_s);

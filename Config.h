@@ -3,25 +3,28 @@
 
 //-----------------------------------------------------------------------------
 
-static int RegLen = 3;
+static const int RegLen  = 3;
+static const int NumRegs = 5;
 
 enum Reg_i
 {
+    R0X = 0,
     RAX = 1,
-    RBX,
-    RCX, 
-    RDX
+    RBX = 2,
+    RCX = 3, 
+    RDX = 4
 };
 
 struct CMD
 {
-    char code   : 4;
-    char immed  : 1;
-    char reg    : 1;
-    char unused : 2;
+    unsigned char code   : 4;
+    unsigned char immed  : 1;
+    unsigned char reg    : 1;
+    unsigned char memory : 1;
+    unsigned char unused : 1;
 };
 
-#define NDUMP
+//#define NDUMP
 //#define NHASH
 //#define NCANARY
 
@@ -32,7 +35,7 @@ static int  Version     = 1;
 
 enum CmdNames
 {
-    HLT = 0, PUSH, ADD, SUB, MUL, DIV, OUT, DUMP = 100  
+    HLT = 0, PUSH, ADD, SUB, MUL, DIV, OUT, POP, DUMP = 15
 };
 
 //-----------------------------------------------------------------------------

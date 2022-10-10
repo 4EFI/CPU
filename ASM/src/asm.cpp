@@ -38,56 +38,49 @@ int AsmGetCmds (ASM* asm_s, FILE* fileIn)
 
 int AsmMakeArrCmds (ASM* asm_s)
 {   
-    int curCmd           = 0;
+    int ip               = 0;
     int totalArrCmdsSize = 0;
     
-    for (int i = 0; asm_s->text.numLines; i++)
+    for (int i = 0; i < asm_s->text.numLines; i++)
     {
         char cmd[MaxCmdLen] = "";
 
         int numReadSyms = 0;
-        sscanf (asm_s->text.lines[i].str, "%s%n", cmd, &numReadSyms);
+        sscanf (asm_s->text.lines[i].str, "%s%n", cmd, &numReadSyms); // Get command name
 
-        // Break for (;;)
-        if (numReadSyms == 0) break;
+        if (numReadSyms == 0) continue;
 
-        if      (stricmp (cmd, "push") == 0)
+        if /**/ (stricmp (cmd, "push") == 0)
         {
-            asm_s->code[curCmd++] = PUSH;
-
-            Elem_t val = 0;            
-            sscanf (asm_s->text.lines[i].str + numReadSyms, "%d", &val); // %d if Elem_t is int
-
-            *(int*)(asm_s->code + curCmd) = val;
-
-            totalArrCmdsSize += (sizeof (char) + sizeof (Elem_t)); // Command + values
-            curCmd           +=  sizeof (Elem_t);
-
-            continue;
+            asm_s->code[ip] = PUSH;
+        }
+        else if (stricmp (cmd, "pop")  == 0)
+        {
+            asm_s->code[ip] = POP;
         }
         else if (stricmp (cmd, "add")  == 0)
         {
-            asm_s->code[curCmd] = ADD;
+            asm_s->code[ip] = ADD;
         }
         else if (stricmp (cmd, "sub")  == 0)
         {
-            asm_s->code[curCmd] = SUB;
+            asm_s->code[ip] = SUB;
         }
         else if (stricmp (cmd, "mul")  == 0)
         {
-            asm_s->code[curCmd] = MUL;
+            asm_s->code[ip] = MUL;
         }
         else if (stricmp (cmd, "div")  == 0)
         {   
-            asm_s->code[curCmd] = DIV;
+            asm_s->code[ip] = DIV;
         }
         else if (stricmp (cmd, "out")  == 0)
         {   
-            asm_s->code[curCmd] = OUT;
+            asm_s->code[ip] = OUT;
         }
         else if (stricmp (cmd, "hlt")  == 0)
         {   
-            asm_s->code[curCmd] = HLT;
+            asm_s->code[ip] = HLT;
         }
         else
         {
@@ -95,51 +88,59 @@ int AsmMakeArrCmds (ASM* asm_s)
             continue;
         }
 
-        curCmd++;
-        totalArrCmdsSize++;
+        AsmArgHandler (asm_s, asm_s->text.lines[i].str + numReadSyms /*Str for read from*/, &ip);
     }
 
-    asm_s->codeSize = totalArrCmdsSize;
+    LOG ("%d", ip);
+
+    asm_s->codeSize = ip;
 
     return 1;
 }
 
 //-----------------------------------------------------------------------------
 
-Elem_t AsmArgHandler (ASM* asm_s, int ip, int curLine, int numSkipSyms)
+int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
 {
-    CMD cmd = {0};
+    if (asm_s == 0 || strForRead == 0) return 0;
+    
+    CMD* cmd = (CMD*)(&asm_s->code[(*ip)++]);
     
     Elem_t val = 0;
     char reg_i[MaxRegLen] = "";
-
-    char* strToRead = asm_s->text.lines[curLine].str + numSkipSyms; // Str for reading from it 
     
-    if      (sscanf (strToRead, "%d", &val))
-    {
-        cmd.immed = true;
+    if /**/ (sscanf (strForRead, "%d", &val) == 1) // if value
+    {   
+        cmd->immed = 1;
+
+        *(Elem_t*)(asm_s->code + *ip) = val;
+        
+        (*ip) += sizeof (Elem_t); 
     }
-    else if (sscanf (strToRead, "%s", reg_i))
-    {
+    
+    else if (sscanf (strForRead, "%s", reg_i) == 1) // if register
+    {    
         if (strlen (reg_i) == RegLen) 
         {
-            cmd.reg = true;
+            cmd->reg = 1;
 
-            *(Elem_t*)(asm_s->code + ip) = GetRegIndex (reg_i);
+            asm_s->code[(*ip)++] = GetRegIndex (reg_i);
         }
     }
 
-    asm_s->code[ip];
+    LOG ("code = %d i = %d r = %d", cmd->code, cmd->immed, cmd->reg);
+
+    return 1;
 }
 
 //-----------------------------------------------------------------------------
 
 int GetRegIndex (const char* reg)
 {
-    if (stricmp (cmd, "rax") == 0) return RAX;
-    if (stricmp (cmd, "rbx") == 0) return RBX;
-    if (stricmp (cmd, "rcx") == 0) return RCX;
-    if (stricmp (cmd, "rdx") == 0) return RDX; 
+    if (stricmp (reg, "rax") == 0) return RAX;
+    if (stricmp (reg, "rbx") == 0) return RBX;
+    if (stricmp (reg, "rcx") == 0) return RCX;
+    if (stricmp (reg, "rdx") == 0) return RDX; 
 
     return 0;
 }
