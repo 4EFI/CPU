@@ -7,9 +7,17 @@
 
 //-----------------------------------------------------------------------------
 
+struct Label
+{
+    int  val;
+    char name[MaxStrLen];
+};
+
+
 struct CPU
 {
-    Elem_t regs[NumRegs];
+    Elem_t regs  [NumRegs];
+    Label  labels[NumLabels];
     
     Stack_t stack; 
     

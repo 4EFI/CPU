@@ -13,8 +13,12 @@ int CpuCtor (CPU* cpu)
     
     StackCtor (&cpu->stack, 1);
 
+    // Fill all with zero
+    memset (cpu->regs,   0, NumRegs   * sizeof (Elem_t));
+    memset (cpu->labels, 0, NumLabels * sizeof (Label) );
+
     cpu->codeSize = 0;
-    cpu->code     = 0;
+    cpu->code     = NULL;
 
     return 1;
 }
@@ -93,7 +97,6 @@ int CpuCmdsHandler (CPU* cpu)
 
             case POP:
                 *arg_ptr = StackPop (&cpu->stack);
-                LOG ("%d", cpu->regs[1]);
                 break;
 
             case ADD:
@@ -116,6 +119,10 @@ int CpuCmdsHandler (CPU* cpu)
                 StackPush (&cpu->stack, val_1 / val_2);
                 break;
             }
+
+            case JMP:
+                ip = arg_val;
+                break;
 
             case OUT:
                 printf ("%d\n", StackPop (&cpu->stack));

@@ -1,501 +1,180 @@
---------------------Fri Oct 07 20:41:17 2022--------------------
+--------------------Mon Oct 10 20:05:29 2022--------------------
+00| src/asm.cpp:117: code = 0 i = 1 r = 0
+00| src/asm.cpp:59: asdfasdf
+00| src/asm.cpp:117: code = 0 i = 0 r = 1
+00| src/asm.cpp:59: asdfasdf
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 1
+00| src/asm.cpp:59: asdfasdf
+00| src/asm.cpp:117: code = 0 i = 0 r = 1
+00| src/asm.cpp:59: asdfasdf
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:59: asdfasdf
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:59: asdfasdf
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 1
+00| src/asm.cpp:59: asdfasdf
+00| src/asm.cpp:117: code = 0 i = 1 r = 0
+00| src/asm.cpp:59: asdfasdf
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:59: asdfasdf
+00| src/asm.cpp:117: code = 0 i = 0 r = 1
+00| src/asm.cpp:59: asdfasdf
+00| src/asm.cpp:117: code = 0 i = 1 r = 0
+00| src/asm.cpp:59: asdfasdf
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:59: asdfasdf
+00| src/asm.cpp:80: Code size = 32
 End of Log!
---------------------Fri Oct 07 21:03:04 2022--------------------
+--------------------Mon Oct 10 20:07:20 2022--------------------
+00| src/asm.cpp:116: code = 0 i = 1 r = 0
+00| src/asm.cpp:72: asdfsaf
+00| src/asm.cpp:116: code = 0 i = 0 r = 1
+00| src/asm.cpp:72: asdfsaf
+00| src/asm.cpp:116: code = 0 i = 0 r = 0
+00| src/asm.cpp:116: code = 0 i = 0 r = 1
+00| src/asm.cpp:72: asdfsaf
+00| src/asm.cpp:116: code = 0 i = 0 r = 1
+00| src/asm.cpp:72: asdfsaf
+00| src/asm.cpp:116: code = 0 i = 0 r = 0
+00| src/asm.cpp:72: asdfsaf
+00| src/asm.cpp:116: code = 0 i = 0 r = 0
+00| src/asm.cpp:72: asdfsaf
+00| src/asm.cpp:116: code = 0 i = 0 r = 0
+00| src/asm.cpp:116: code = 0 i = 0 r = 1
+00| src/asm.cpp:72: asdfsaf
+00| src/asm.cpp:116: code = 0 i = 1 r = 0
+00| src/asm.cpp:72: asdfsaf
+00| src/asm.cpp:116: code = 0 i = 0 r = 0
+00| src/asm.cpp:72: asdfsaf
+00| src/asm.cpp:116: code = 0 i = 0 r = 1
+00| src/asm.cpp:72: asdfsaf
+00| src/asm.cpp:116: code = 0 i = 1 r = 0
+00| src/asm.cpp:72: asdfsaf
+00| src/asm.cpp:116: code = 0 i = 0 r = 0
+00| src/asm.cpp:116: code = 0 i = 0 r = 0
+00| src/asm.cpp:72: asdfsaf
+00| src/asm.cpp:79: Code size = 32
 End of Log!
---------------------Sat Oct 08 00:05:44 2022--------------------
+--------------------Mon Oct 10 20:17:50 2022--------------------
+00| src/asm.cpp:117: code = 0 i = 1 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 1
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 1
+00| src/asm.cpp:117: code = 0 i = 0 r = 1
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 1
+00| src/asm.cpp:117: code = 0 i = 1 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 1
+00| src/asm.cpp:117: code = 0 i = 1 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:80: Code size = 32
 End of Log!
---------------------Mon Oct 10 15:50:45 2022--------------------
+--------------------Mon Oct 10 20:20:12 2022--------------------
+00| src/asm.cpp:116: code = 0 i = 1 r = 0
+00| src/asm.cpp:116: code = 0 i = 0 r = 1
+00| src/asm.cpp:116: code = 0 i = 0 r = 0
+00| src/asm.cpp:116: code = 0 i = 0 r = 1
+00| src/asm.cpp:116: code = 0 i = 0 r = 1
+00| src/asm.cpp:116: code = 0 i = 0 r = 0
+00| src/asm.cpp:116: code = 0 i = 0 r = 0
+00| src/asm.cpp:116: code = 0 i = 0 r = 0
+00| src/asm.cpp:116: code = 0 i = 0 r = 1
+00| src/asm.cpp:116: code = 0 i = 1 r = 0
+00| src/asm.cpp:116: code = 0 i = 0 r = 0
+00| src/asm.cpp:116: code = 0 i = 0 r = 1
+00| src/asm.cpp:116: code = 0 i = 1 r = 0
+00| src/asm.cpp:116: code = 0 i = 0 r = 0
+00| src/asm.cpp:116: code = 0 i = 0 r = 0
+00| src/asm.cpp:79: Code size = 32
 End of Log!
---------------------Mon Oct 10 17:12:02 2022--------------------
-00| src/asm.cpp:93: 45
+--------------------Mon Oct 10 20:27:33 2022--------------------
+00| src/asm.cpp:115: code = 0 i = 1 r = 0
+00| src/asm.cpp:75: 1 17
+00| src/asm.cpp:115: code = 0 i = 0 r = 1
+00| src/asm.cpp:75: 7 39
+00| src/asm.cpp:115: code = 0 i = 0 r = 0
+00| src/asm.cpp:115: code = 0 i = 0 r = 1
+00| src/asm.cpp:75: 1 33
+00| src/asm.cpp:115: code = 0 i = 0 r = 1
+00| src/asm.cpp:75: 1 33
+00| src/asm.cpp:115: code = 0 i = 0 r = 0
+00| src/asm.cpp:75: 4 4
+00| src/asm.cpp:115: code = 0 i = 0 r = 0
+00| src/asm.cpp:75: 6 6
+00| src/asm.cpp:115: code = 0 i = 0 r = 0
+00| src/asm.cpp:115: code = 0 i = 0 r = 1
+00| src/asm.cpp:75: 1 33
+00| src/asm.cpp:115: code = 0 i = 1 r = 0
+00| src/asm.cpp:75: 1 17
+00| src/asm.cpp:115: code = 0 i = 0 r = 0
+00| src/asm.cpp:75: 2 2
+00| src/asm.cpp:115: code = 0 i = 0 r = 1
+00| src/asm.cpp:75: 7 39
+00| src/asm.cpp:115: code = 0 i = 1 r = 0
+00| src/asm.cpp:75: 8 24
+00| src/asm.cpp:115: code = 0 i = 0 r = 0
+00| src/asm.cpp:115: code = 0 i = 0 r = 0
+00| src/asm.cpp:75: 0 0
+00| src/asm.cpp:78: Code size = 32
 End of Log!
---------------------Mon Oct 10 17:12:57 2022--------------------
-00| src/asm.cpp:93: 45
+--------------------Mon Oct 10 20:31:50 2022--------------------
+00| src/asm.cpp:113: code = 0 i = 1 r = 0
+00| src/asm.cpp:75: 1 17
+00| src/asm.cpp:113: code = 0 i = 0 r = 1
+00| src/asm.cpp:75: 7 39
+00| src/asm.cpp:113: code = 0 i = 0 r = 1
+00| src/asm.cpp:75: 1 33
+00| src/asm.cpp:113: code = 0 i = 0 r = 1
+00| src/asm.cpp:75: 1 33
+00| src/asm.cpp:113: code = 0 i = 0 r = 0
+00| src/asm.cpp:75: 4 4
+00| src/asm.cpp:113: code = 0 i = 0 r = 0
+00| src/asm.cpp:75: 6 6
+00| src/asm.cpp:113: code = 0 i = 0 r = 1
+00| src/asm.cpp:75: 1 33
+00| src/asm.cpp:113: code = 0 i = 1 r = 0
+00| src/asm.cpp:75: 1 17
+00| src/asm.cpp:113: code = 0 i = 0 r = 0
+00| src/asm.cpp:75: 2 2
+00| src/asm.cpp:113: code = 0 i = 0 r = 1
+00| src/asm.cpp:75: 7 39
+00| src/asm.cpp:113: code = 0 i = 1 r = 0
+00| src/asm.cpp:75: 8 24
+00| src/asm.cpp:113: code = 0 i = 0 r = 0
+00| src/asm.cpp:75: 0 0
 End of Log!
---------------------Mon Oct 10 17:15:04 2022--------------------
-00| src/asm.cpp:93: 45
+--------------------Mon Oct 10 20:32:36 2022--------------------
+00| src/asm.cpp:111: code = 0 i = 1 r = 0
+00| src/asm.cpp:111: code = 0 i = 0 r = 1
+00| src/asm.cpp:111: code = 0 i = 0 r = 1
+00| src/asm.cpp:111: code = 0 i = 0 r = 1
+00| src/asm.cpp:111: code = 0 i = 0 r = 0
+00| src/asm.cpp:111: code = 0 i = 0 r = 0
+00| src/asm.cpp:111: code = 0 i = 0 r = 1
+00| src/asm.cpp:111: code = 0 i = 1 r = 0
+00| src/asm.cpp:111: code = 0 i = 0 r = 0
+00| src/asm.cpp:111: code = 0 i = 0 r = 1
+00| src/asm.cpp:111: code = 0 i = 1 r = 0
+00| src/asm.cpp:111: code = 0 i = 0 r = 0
 End of Log!
---------------------Mon Oct 10 17:15:21 2022--------------------
-00| src/asm.cpp:111: asdfsadf
-00| src/asm.cpp:111: asdfsadf
-00| src/asm.cpp:111: asdfsadf
-00| src/asm.cpp:111: asdfsadf
-00| src/asm.cpp:111: asdfsadf
-00| src/asm.cpp:111: asdfsadf
-00| src/asm.cpp:111: asdfsadf
-00| src/asm.cpp:111: asdfsadf
-00| src/asm.cpp:111: asdfsadf
-00| src/asm.cpp:93: 45
-End of Log!
---------------------Mon Oct 10 17:16:03 2022--------------------
-00| src/asm.cpp:111:  10
-00| src/asm.cpp:111:  20
-00| src/asm.cpp:111:  
-00| src/asm.cpp:111:  1
-00| src/asm.cpp:111:  2
-00| src/asm.cpp:111: 
-00| src/asm.cpp:111:  
-00| src/asm.cpp:111:  
-00| src/asm.cpp:111: 
-00| src/asm.cpp:93: 45
-End of Log!
---------------------Mon Oct 10 17:16:33 2022--------------------
-00| src/asm.cpp:111:  10 = 10
-00| src/asm.cpp:111:  20 = 20
-00| src/asm.cpp:111:   = 0
-00| src/asm.cpp:111:  1 = 1
-00| src/asm.cpp:111:  2 = 2
-00| src/asm.cpp:111:  = 0
-00| src/asm.cpp:111:   = 0
-00| src/asm.cpp:111:   = 0
-00| src/asm.cpp:111:  = 0
-00| src/asm.cpp:93: 45
-End of Log!
---------------------Mon Oct 10 17:17:04 2022--------------------
-00| src/asm.cpp:111: ' 10' = 10
-00| src/asm.cpp:111: ' 20' = 20
-00| src/asm.cpp:111: ' ' = 0
-00| src/asm.cpp:111: ' 1' = 1
-00| src/asm.cpp:111: ' 2' = 2
-00| src/asm.cpp:111: '' = 0
-00| src/asm.cpp:111: ' ' = 0
-00| src/asm.cpp:111: ' ' = 0
-00| src/asm.cpp:111: '' = 0
-00| src/asm.cpp:93: 45
-End of Log!
---------------------Mon Oct 10 17:17:33 2022--------------------
-00| src/asm.cpp:111: ' 10' = 10
-00| src/asm.cpp:111: ' 20' = 20
-00| src/asm.cpp:111: ' ' = 0
-00| src/asm.cpp:111: ' 1' = 1
-00| src/asm.cpp:111: ' 2' = 2
-00| src/asm.cpp:111: '' = 0
-00| src/asm.cpp:111: ' ' = 0
-00| src/asm.cpp:111: ' ' = 0
-00| src/asm.cpp:111: '' = 0
-00| src/asm.cpp:93: 45
-End of Log!
---------------------Mon Oct 10 17:20:59 2022--------------------
-00| src/asm.cpp:113: ' 10' = 10
-00| src/asm.cpp:113: ' 20' = 20
-00| src/asm.cpp:113: ' ' = 0
-00| src/asm.cpp:113: ' 1' = 1
-00| src/asm.cpp:113: ' 2' = 2
-00| src/asm.cpp:113: '' = 0
-00| src/asm.cpp:113: ' ' = 0
-00| src/asm.cpp:113: ' ' = 0
-00| src/asm.cpp:113: '' = 0
-00| src/asm.cpp:93: 45
-End of Log!
---------------------Mon Oct 10 17:21:12 2022--------------------
-00| src/asm.cpp:113: ' 10' = 10
-00| src/asm.cpp:115: 1
-00| src/asm.cpp:113: ' 20' = 20
-00| src/asm.cpp:115: 1
-00| src/asm.cpp:113: ' ' = 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:113: ' 1' = 1
-00| src/asm.cpp:115: 1
-00| src/asm.cpp:113: ' 2' = 2
-00| src/asm.cpp:115: 1
-00| src/asm.cpp:113: '' = 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:113: ' ' = 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:113: ' ' = 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:113: '' = 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:93: 45
-End of Log!
---------------------Mon Oct 10 17:22:14 2022--------------------
-00| src/asm.cpp:113: ' 10' = 10
-00| src/asm.cpp:115: 0
-00| src/asm.cpp:113: ' 20' = 20
-00| src/asm.cpp:115: 0
-00| src/asm.cpp:113: ' 1' = 1
-00| src/asm.cpp:115: 0
-00| src/asm.cpp:113: ' 2' = 2
-00| src/asm.cpp:115: 0
-00| src/asm.cpp:93: 25
-End of Log!
---------------------Mon Oct 10 17:24:32 2022--------------------
-00| src/asm.cpp:93: 25
-End of Log!
---------------------Mon Oct 10 17:33:20 2022--------------------
-00| src/asm.cpp:110: code num = 0
-00| src/asm.cpp:110: code num = 0
-00| src/asm.cpp:110: code num = 0
-00| src/asm.cpp:110: code num = 0
-00| src/asm.cpp:110: code num = 0
-00| src/asm.cpp:110: code num = 0
-00| src/asm.cpp:110: code num = 0
-00| src/asm.cpp:110: code num = 0
-00| src/asm.cpp:110: code num = 0
-00| src/asm.cpp:93: 25
-End of Log!
---------------------Mon Oct 10 17:33:55 2022--------------------
-00| src/asm.cpp:110: code num = 1
-00| src/asm.cpp:110: code num = 1
-00| src/asm.cpp:110: code num = 2
-00| src/asm.cpp:110: code num = 1
-00| src/asm.cpp:110: code num = 1
-00| src/asm.cpp:110: code num = 2
-00| src/asm.cpp:110: code num = 5
-00| src/asm.cpp:110: code num = 6
-00| src/asm.cpp:110: code num = 0
-00| src/asm.cpp:93: 16
-End of Log!
---------------------Mon Oct 10 17:34:24 2022--------------------
-00| src/asm.cpp:93: 25
-End of Log!
---------------------Mon Oct 10 17:37:26 2022--------------------
-00| src/asm.cpp:109: code num = 1
-00| src/asm.cpp:109: code num = 1
-00| src/asm.cpp:109: code num = 2
-00| src/asm.cpp:109: code num = 1
-00| src/asm.cpp:109: code num = 1
-00| src/asm.cpp:109: code num = 2
-00| src/asm.cpp:109: code num = 5
-00| src/asm.cpp:109: code num = 6
-00| src/asm.cpp:109: code num = 0
-00| src/asm.cpp:93: 25
-End of Log!
---------------------Mon Oct 10 17:40:01 2022--------------------
-00| src/asm.cpp:106: code num = 1
-00| src/asm.cpp:106: code num = 1
-00| src/asm.cpp:106: code num = 2
-00| src/asm.cpp:106: code num = 1
-00| src/asm.cpp:106: code num = 1
-00| src/asm.cpp:106: code num = 2
-00| src/asm.cpp:106: code num = 5
-00| src/asm.cpp:106: code num = 6
-00| src/asm.cpp:106: code num = 0
-00| src/asm.cpp:91: 25
-End of Log!
---------------------Mon Oct 10 17:40:34 2022--------------------
-00| src/asm.cpp:128: code num = 1 r = 0 i =-1
-00| src/asm.cpp:128: code num = 1 r = 0 i =-1
-00| src/asm.cpp:128: code num = 2 r = 0 i =0
-00| src/asm.cpp:128: code num = 1 r = 0 i =-1
-00| src/asm.cpp:128: code num = 1 r = 0 i =-1
-00| src/asm.cpp:128: code num = 2 r = 0 i =0
-00| src/asm.cpp:128: code num = 5 r = 0 i =0
-00| src/asm.cpp:128: code num = 6 r = 0 i =0
-00| src/asm.cpp:128: code num = 0 r = 0 i =0
-00| src/asm.cpp:91: 25
-End of Log!
---------------------Mon Oct 10 17:41:14 2022--------------------
-00| src/asm.cpp:128: code num = 1 r = 0 i =-1
-00| src/asm.cpp:128: code num = 1 r = 0 i =-1
-00| src/asm.cpp:128: code num = 2 r = 0 i =0
-00| src/asm.cpp:128: code num = 1 r = 0 i =-1
-00| src/asm.cpp:128: code num = 1 r = 0 i =-1
-00| src/asm.cpp:128: code num = 2 r = 0 i =0
-00| src/asm.cpp:128: code num = 5 r = 0 i =0
-00| src/asm.cpp:128: code num = 6 r = 0 i =0
-00| src/asm.cpp:128: code num = 0 r = 0 i =0
-00| src/asm.cpp:91: 25
-End of Log!
---------------------Mon Oct 10 17:42:56 2022--------------------
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:130: code num = 1 r = 0 i = -1
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:130: code num = 1 r = 0 i = -1
-00| src/asm.cpp:130: code num = 2 r = 0 i = 0
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:130: code num = 1 r = 0 i = -1
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:130: code num = 1 r = 0 i = -1
-00| src/asm.cpp:130: code num = 2 r = 0 i = 0
-00| src/asm.cpp:130: code num = 5 r = 0 i = 0
-00| src/asm.cpp:130: code num = 6 r = 0 i = 0
-00| src/asm.cpp:130: code num = 0 r = 0 i = 0
-00| src/asm.cpp:91: 25
-End of Log!
---------------------Mon Oct 10 17:43:04 2022--------------------
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:132: code num = 1 r = 0 i = -1
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:132: code num = 1 r = 0 i = -1
-00| src/asm.cpp:132: code num = 2 r = 0 i = 0
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:132: code num = 1 r = 0 i = -1
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:132: code num = 1 r = 0 i = -1
-00| src/asm.cpp:132: code num = 2 r = 0 i = 0
-00| src/asm.cpp:132: code num = 5 r = 0 i = 0
-00| src/asm.cpp:132: code num = 6 r = 0 i = 0
-00| src/asm.cpp:132: code num = 0 r = 0 i = 0
-00| src/asm.cpp:91: 25
-End of Log!
---------------------Mon Oct 10 17:48:40 2022--------------------
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:116: -1
-00| src/asm.cpp:133: code num = 1 r = -1 i = -1
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:116: -1
-00| src/asm.cpp:133: code num = 1 r = -1 i = -1
-00| src/asm.cpp:133: code num = 2 r = 0 i = 0
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:116: -1
-00| src/asm.cpp:133: code num = 1 r = -1 i = -1
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:116: -1
-00| src/asm.cpp:133: code num = 1 r = -1 i = -1
-00| src/asm.cpp:133: code num = 2 r = 0 i = 0
-00| src/asm.cpp:133: code num = 5 r = 0 i = 0
-00| src/asm.cpp:133: code num = 6 r = 0 i = 0
-00| src/asm.cpp:133: code num = 0 r = 0 i = 0
-00| src/asm.cpp:91: 25
-End of Log!
---------------------Mon Oct 10 17:48:57 2022--------------------
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:132: code num = 1 r = 0 i = -1
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:132: code num = 1 r = 0 i = -1
-00| src/asm.cpp:132: code num = 2 r = 0 i = 0
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:132: code num = 1 r = 0 i = -1
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:132: code num = 1 r = 0 i = -1
-00| src/asm.cpp:132: code num = 2 r = 0 i = 0
-00| src/asm.cpp:132: code num = 5 r = 0 i = 0
-00| src/asm.cpp:132: code num = 6 r = 0 i = 0
-00| src/asm.cpp:132: code num = 0 r = 0 i = 0
-00| src/asm.cpp:91: 25
-End of Log!
---------------------Mon Oct 10 17:49:09 2022--------------------
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: 0
-00| src/asm.cpp:132: code num = 1 r = 0 i = 0
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: 0
-00| src/asm.cpp:132: code num = 1 r = 0 i = 0
-00| src/asm.cpp:132: code num = 2 r = 0 i = 0
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: 0
-00| src/asm.cpp:132: code num = 1 r = 0 i = 0
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: 0
-00| src/asm.cpp:132: code num = 1 r = 0 i = 0
-00| src/asm.cpp:132: code num = 2 r = 0 i = 0
-00| src/asm.cpp:132: code num = 5 r = 0 i = 0
-00| src/asm.cpp:132: code num = 6 r = 0 i = 0
-00| src/asm.cpp:132: code num = 0 r = 0 i = 0
-00| src/asm.cpp:91: 25
-End of Log!
---------------------Mon Oct 10 17:49:19 2022--------------------
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:132: code num = 1 r = 0 i = -1
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:132: code num = 1 r = 0 i = -1
-00| src/asm.cpp:132: code num = 2 r = 0 i = 0
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:132: code num = 1 r = 0 i = -1
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: -1
-00| src/asm.cpp:132: code num = 1 r = 0 i = -1
-00| src/asm.cpp:132: code num = 2 r = 0 i = 0
-00| src/asm.cpp:132: code num = 5 r = 0 i = 0
-00| src/asm.cpp:132: code num = 6 r = 0 i = 0
-00| src/asm.cpp:132: code num = 0 r = 0 i = 0
-00| src/asm.cpp:91: 25
-End of Log!
---------------------Mon Oct 10 17:50:24 2022--------------------
-00| src/asm.cpp:130: code num = 0 r = 0 i = -1
-00| src/asm.cpp:130: code num = 0 r = 0 i = -1
-00| src/asm.cpp:130: code num = 0 r = 0 i = 0
-00| src/asm.cpp:130: code num = 0 r = 0 i = -1
-00| src/asm.cpp:130: code num = 0 r = 0 i = -1
-00| src/asm.cpp:130: code num = 0 r = 0 i = 0
-00| src/asm.cpp:130: code num = 0 r = 0 i = 0
-00| src/asm.cpp:130: code num = 0 r = 0 i = 0
-00| src/asm.cpp:130: code num = 0 r = 0 i = 0
-00| src/asm.cpp:91: 16
-End of Log!
---------------------Mon Oct 10 17:55:34 2022--------------------
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: 1
-00| src/asm.cpp:132: code num = 1 r = 0 i = 1
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: 1
-00| src/asm.cpp:132: code num = 1 r = 0 i = 1
-00| src/asm.cpp:132: code num = 2 r = 0 i = 0
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: 1
-00| src/asm.cpp:132: code num = 1 r = 0 i = 1
-00| src/asm.cpp:111: 0
-00| src/asm.cpp:115: 1
-00| src/asm.cpp:132: code num = 1 r = 0 i = 1
-00| src/asm.cpp:132: code num = 2 r = 0 i = 0
-00| src/asm.cpp:132: code num = 5 r = 0 i = 0
-00| src/asm.cpp:132: code num = 6 r = 0 i = 0
-00| src/asm.cpp:132: code num = 0 r = 0 i = 0
-00| src/asm.cpp:91: 25
-End of Log!
---------------------Mon Oct 10 17:57:44 2022--------------------
-00| src/asm.cpp:128: code num = 1 r = 0 i = 1
-00| src/asm.cpp:128: code num = 1 r = 0 i = 1
-00| src/asm.cpp:128: code num = 2 r = 0 i = 0
-00| src/asm.cpp:128: code num = 1 r = 0 i = 1
-00| src/asm.cpp:128: code num = 1 r = 0 i = 1
-00| src/asm.cpp:128: code num = 2 r = 0 i = 0
-00| src/asm.cpp:128: code num = 5 r = 0 i = 0
-00| src/asm.cpp:128: code num = 6 r = 0 i = 0
-00| src/asm.cpp:128: code num = 0 r = 0 i = 0
-00| src/asm.cpp:91: 25
-End of Log!
---------------------Mon Oct 10 18:04:41 2022--------------------
---------------------Mon Oct 10 18:07:06 2022--------------------
-00| src/asm.cpp:128: code num = 1 r = 0 i = 1
-00| src/asm.cpp:128: code num = 1 r = 0 i = 1
-00| src/asm.cpp:128: code num = 2 r = 0 i = 0
-00| src/asm.cpp:128: code num = 1 r = 0 i = 1
-00| src/asm.cpp:128: code num = 1 r = 0 i = 1
-00| src/asm.cpp:128: code num = 2 r = 0 i = 0
-00| src/asm.cpp:128: code num = 5 r = 0 i = 0
-00| src/asm.cpp:128: code num = 6 r = 0 i = 0
-00| src/asm.cpp:128: code num = 0 r = 0 i = 0
-00| src/asm.cpp:91: 25
-End of Log!
---------------------Mon Oct 10 18:08:26 2022--------------------
-00| src/asm.cpp:91: 25
-End of Log!
---------------------Mon Oct 10 18:16:32 2022--------------------
-00| src/asm.cpp:91: 5
-End of Log!
---------------------Mon Oct 10 18:16:57 2022--------------------
-00| src/asm.cpp:91: 25
-End of Log!
---------------------Mon Oct 10 18:17:40 2022--------------------
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: 'add'
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: 'add'
-00| src/asm.cpp:51: 'div'
-00| src/asm.cpp:51: 'out'
-00| src/asm.cpp:51: 'hlt'
-00| src/asm.cpp:51: ''
-00| src/asm.cpp:93: 25
-End of Log!
---------------------Mon Oct 10 18:18:28 2022--------------------
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: ''
-00| src/asm.cpp:93: 5
-End of Log!
---------------------Mon Oct 10 18:19:03 2022--------------------
---------------------Mon Oct 10 18:19:16 2022--------------------
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: ''
-00| src/asm.cpp:51: ''
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: 'add'
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: 'add'
-00| src/asm.cpp:51: 'div'
-00| src/asm.cpp:51: 'out'
-00| src/asm.cpp:51: 'hlt'
-00| src/asm.cpp:51: ''
---------------------Mon Oct 10 18:19:28 2022--------------------
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: ''
-00| src/asm.cpp:51: ''
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: 'add'
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: 'add'
-00| src/asm.cpp:51: 'div'
-00| src/asm.cpp:51: 'out'
-00| src/asm.cpp:51: 'hlt'
-00| src/asm.cpp:51: ''
-00| src/asm.cpp:92: 25
-End of Log!
---------------------Mon Oct 10 18:24:29 2022--------------------
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: 'pop'
-00| src/asm.cpp:51: ''
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: 'mul'
-00| src/asm.cpp:51: 'out'
-00| src/asm.cpp:51: ''
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: 'push'
-00| src/asm.cpp:51: 'add'
-00| src/asm.cpp:51: 'pop'
-00| src/asm.cpp:92: 18
-End of Log!
---------------------Mon Oct 10 18:25:32 2022--------------------
-00| src/asm.cpp:94: 21
-End of Log!
---------------------Mon Oct 10 18:26:19 2022--------------------
-00| src/asm.cpp:94: 22
-End of Log!
---------------------Mon Oct 10 18:33:08 2022--------------------
-00| src/asm.cpp:131: code = 1 i = 1 r = 0
-00| src/asm.cpp:131: code = 2 i = 0 r = 1
-00| src/asm.cpp:131: code = 1 i = 0 r = 1
-00| src/asm.cpp:131: code = 1 i = 0 r = 1
-00| src/asm.cpp:131: code = 4 i = 0 r = 0
-00| src/asm.cpp:131: code = 6 i = 0 r = 0
-00| src/asm.cpp:131: code = 1 i = 0 r = 0
-00| src/asm.cpp:131: code = 1 i = 1 r = 0
-00| src/asm.cpp:131: code = 2 i = 0 r = 0
-00| src/asm.cpp:131: code = 2 i = 0 r = 1
-00| src/asm.cpp:94: 22
-End of Log!
---------------------Mon Oct 10 18:33:39 2022--------------------
-00| src/asm.cpp:131: code = 1 i = 1 r = 0
-00| src/asm.cpp:131: code = 7 i = 0 r = 1
-00| src/asm.cpp:131: code = 1 i = 0 r = 1
-00| src/asm.cpp:131: code = 1 i = 0 r = 1
-00| src/asm.cpp:131: code = 4 i = 0 r = 0
-00| src/asm.cpp:131: code = 6 i = 0 r = 0
-00| src/asm.cpp:131: code = 1 i = 0 r = 0
-00| src/asm.cpp:131: code = 1 i = 1 r = 0
-00| src/asm.cpp:131: code = 2 i = 0 r = 0
-00| src/asm.cpp:131: code = 7 i = 0 r = 1
-00| src/asm.cpp:94: 22
-End of Log!
---------------------Mon Oct 10 18:35:12 2022--------------------
-00| src/asm.cpp:131: code = 1 i = 1 r = 0
-00| src/asm.cpp:131: code = 7 i = 0 r = 1
-00| src/asm.cpp:131: code = 1 i = 0 r = 1
-00| src/asm.cpp:131: code = 1 i = 0 r = 1
-00| src/asm.cpp:131: code = 4 i = 0 r = 0
-00| src/asm.cpp:131: code = 6 i = 0 r = 0
-00| src/asm.cpp:131: code = 1 i = 0 r = 0
-00| src/asm.cpp:131: code = 1 i = 1 r = 0
-00| src/asm.cpp:131: code = 2 i = 0 r = 0
-00| src/asm.cpp:131: code = 7 i = 0 r = 1
-00| src/asm.cpp:94: 22
-End of Log!
---------------------Mon Oct 10 18:37:13 2022--------------------
-00| src/asm.cpp:131: code = 1 i = 1 r = 0
-00| src/asm.cpp:131: code = 7 i = 0 r = 1
-00| src/asm.cpp:131: code = 1 i = 0 r = 1
-00| src/asm.cpp:131: code = 1 i = 0 r = 1
-00| src/asm.cpp:131: code = 4 i = 0 r = 0
-00| src/asm.cpp:131: code = 6 i = 0 r = 0
-00| src/asm.cpp:131: code = 1 i = 0 r = 1
-00| src/asm.cpp:131: code = 1 i = 1 r = 0
-00| src/asm.cpp:131: code = 2 i = 0 r = 0
-00| src/asm.cpp:131: code = 7 i = 0 r = 1
-00| src/asm.cpp:94: 23
+--------------------Mon Oct 10 20:36:54 2022--------------------
+00| src/asm.cpp:117: code = 0 i = 1 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 1
+00| src/asm.cpp:117: code = 0 i = 0 r = 1
+00| src/asm.cpp:117: code = 0 i = 0 r = 1
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 1
+00| src/asm.cpp:117: code = 0 i = 1 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 1
+00| src/asm.cpp:117: code = 0 i = 1 r = 0
+00| src/asm.cpp:117: code = 0 i = 0 r = 0
 End of Log!

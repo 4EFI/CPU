@@ -3,8 +3,11 @@
 
 //-----------------------------------------------------------------------------
 
-static const int RegLen  = 3;
-static const int NumRegs = 5;
+static const int RegLen    = 3;
+static const int NumRegs   = 5;
+static const int NumLabels = 5;
+
+static const int MaxStrLen = 255;
 
 enum Reg_i
 {
@@ -24,7 +27,7 @@ struct CMD
     unsigned char unused : 1;
 };
 
-//#define NDUMP
+#define NDUMP
 //#define NHASH
 //#define NCANARY
 
@@ -33,10 +36,15 @@ typedef int Elem_t;
 static char Signature[] = "SP"; // Super paper
 static int  Version     = 1;
 
+#define DEF_CMD(NAME, NUM) \
+    CMD_##NAME = NUM, 
+
 enum CmdNames
 {
-    HLT = 0, PUSH, ADD, SUB, MUL, DIV, OUT, POP, DUMP = 15
+    #include "Commands.h"
 };
+
+#undef DEF_CMD
 
 //-----------------------------------------------------------------------------
 
