@@ -10,6 +10,9 @@
 #include "StrAlgorithms.h"
 #include "LOG.h"
 
+#define _STR(str) #str
+#define  STR(str) _STR(str)
+
 //-----------------------------------------------------------------------------
 
 int AsmCtor (ASM* asm_s)
@@ -56,7 +59,7 @@ int AsmMakeArrCmds (ASM* asm_s)
         char* strForRead = asm_s->text.lines[i].str;
 
         int numReadSyms = 0;
-        sscanf (strForRead, "%s%n", cmdName, &numReadSyms); // Get command name
+        sscanf (strForRead, "%" STR(MaxStrLen) "s%n", cmdName, &numReadSyms); // Get command name
 
         if (numReadSyms == 0) continue;
 
@@ -69,12 +72,9 @@ int AsmMakeArrCmds (ASM* asm_s)
             continue;
         }
 
-
-        int ipCopy = ip;
+        CMD* cmd = (CMD*)(&asm_s->code[ip]);
+        
         AsmArgHandler (asm_s, strForRead + numReadSyms /*Str for read from*/, &ip);
-
-
-        CMD* cmd = (CMD*)(&asm_s->code[ipCopy]);
 
         // Compare commands
         #define DEF_CMD(NAME, NUM, ...)        \
@@ -145,6 +145,8 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
     
     CMD* cmd = (CMD*)(&asm_s->code[(*ip)++]);
 
+    // ??
+
     char* sym = strchr (strForRead, ':');
 
     if (sym)
@@ -152,7 +154,7 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
         int len = 0;
         strForRead = sym + 1;
 
-        sscanf (strForRead, "%*s%n", &len);
+        sscanf (strForRead, "%" STR(MaxStrLen) "*s%n", &len);
 
         int pos = GetLabelIndex (asm_s->labels, NumLabels, strForRead, len);
 
@@ -175,6 +177,7 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
     Elem_t val = 0;
     char reg_i[MaxStrLen] = "";
 
+    // isMemTreatment
     bool isStartMem = false;
     
     // check [
@@ -183,8 +186,10 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
     int numSkipSyms = 0;
     if (sym) { isStartMem = true; numSkipSyms = sym - strForRead + 1; }
 
-    if /**/ (sscanf (strForRead + numSkipSyms, "%d + %s",    &val,    reg_i) == 2 || 
-             sscanf (strForRead + numSkipSyms, " %[^+] + %d", reg_i, &val  ) == 2) 
+    // [ 10 +    rax ]
+    // 
+    if /**/ (sscanf (strForRead + numSkipSyms, "%lf + %" STR(MaxStrLen) "s",    &val,    reg_i) == 2 || 
+             sscanf (strForRead + numSkipSyms, " %" STR(MaxStrLen) "[^+] + %lf", reg_i, &val  ) == 2) 
     /* if (value + reg_value) || (reg_value + value) */
     {
         cmd->immed = 1;
@@ -197,7 +202,7 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
         asm_s->code[(*ip)++] = GetRegIndex (reg_i);
     }
 
-    else if (sscanf (strForRead + numSkipSyms, "%d", &val) == 1) // if value
+    else if (sscanf (strForRead + numSkipSyms, "%lf", &val) == 1) // if value
     {   
         cmd->immed = 1;
 
@@ -206,7 +211,7 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
         (*ip) += sizeof (Elem_t); 
     }
     
-    else if (sscanf (strForRead + numSkipSyms, "%s", reg_i) == 1) // if register
+    else if (sscanf (strForRead + numSkipSyms, "%" STR(MaxStrLen) "s", reg_i) == 1) // if register
     {    
         cmd->reg = 1;
 
@@ -255,6 +260,8 @@ int GetRegIndex (const char* reg)
 }
 
 //-----------------------------------------------------------------------------
+
+// Bin, Exec
 
 int AsmMakeOutFile (ASM* asm_s, FILE* fileOut)
 {   

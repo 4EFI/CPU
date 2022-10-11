@@ -39,10 +39,10 @@ DEF_CMD (OUT, 6,
 {
     if (arg_ptr)
     {
-        if /**/ (cmd.memory) printf ("RAM[%d] = %d\n",  arg_ptr - cpu->RAM,  *arg_ptr);
-        else if (cmd.reg)    printf ("Regs[%d] = %d\n", arg_ptr - cpu->regs, *arg_ptr);
+        if /**/ (cmd.memory) printf ("RAM[%d] = %g\n",  arg_ptr - cpu->RAM,  (double)(*arg_ptr));
+        else if (cmd.reg)    printf ("Regs[%d] = %g\n", arg_ptr - cpu->regs, (double)(*arg_ptr));
     }
-    else printf ("%d\n", S_POP);
+    else printf ("%g\n", double(S_POP));
 })
 
 DEF_CMD (POP, 7, 
@@ -69,21 +69,16 @@ DEF_CMD (JMP, 8,
 #undef DEF_JMP
 
 DEF_CMD (DUMP, 31, 
-{
-    StackFileOut = stdout;
-    
+{ 
     StackDump (&cpu->stack);
 
-    CpuCmdDump (cpu, ip);
-    CpuRegDump (cpu);
-    printf     ("\n");
-    CpuRamDump (cpu);
+    CpuCmdDump (cpu, ip, LogFile);
+    CpuRegDump (cpu, LogFile);
+    fprintf    (LogFile, "\n");
+    CpuRamDump (cpu, LogFile);
 
-    PrintSyms ('-', NumDumpDividers, stdout);
-    printf    ("\n");
-    
-
-    StackFileOut = LogFile;
+    PrintSyms ('-', NumDumpDividers, LogFile);
+    fprintf   (LogFile, "\n");
 })
 
 #undef S_POP

@@ -7,7 +7,8 @@ static const int NumRegs   = 5;
 static const int NumLabels = 20;
 static const int RamSize   = 100;
 
-static const int MaxStrLen = 255;
+// Not const for max size in scanf 
+#define MaxStrLen 255 
 
 static int NumDumpDividers = 65;
 
@@ -25,8 +26,8 @@ enum Reg_i
 struct CMD
 {
     unsigned char code   : 5;
-    unsigned char immed  : 1;
-    unsigned char reg    : 1;
+    unsigned char immed  : 1; // imm
+    unsigned char reg    : 1; 
     unsigned char memory : 1;
 };
 
@@ -34,7 +35,7 @@ struct CMD
 //#define NHASH
 //#define NCANARY
 
-typedef int Elem_t;
+typedef double Elem_t;
 
 static char Signature[] = "SP"; // Super paper
 static int  Version     = 1;

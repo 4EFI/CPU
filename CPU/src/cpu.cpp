@@ -54,13 +54,19 @@ Elem_t* CpuGetArg (CPU* cpu, int* ip, Elem_t* val)
 
     if (cmd.immed)
     {
-        (*val) += *(Elem_t*)(cpu->code + *ip);
+        Elem_t temp = 0;
+        memcpy (&temp, cpu->code + *ip, sizeof (Elem_t));
+
+        (*val) += temp;
         (*ip)  += sizeof (Elem_t);
     }
     
     if (cmd.reg)
     {        
-        (*val) +=  cpu->regs[cpu->code[*ip]];
+        Elem_t temp = 0;
+        memcpy (&temp, &cpu->regs[cpu->code[*ip]], sizeof (Elem_t));
+
+        (*val) += temp;
 
         arg_ptr = &cpu->regs[cpu->code[*ip]];
 
@@ -70,7 +76,7 @@ Elem_t* CpuGetArg (CPU* cpu, int* ip, Elem_t* val)
     if (cmd.memory)
     {
         // Check val
-        arg_ptr = &cpu->RAM[*val];
+        arg_ptr = &cpu->RAM[int(*val)];
     }
 
     return arg_ptr;  
@@ -101,6 +107,7 @@ int CpuCmdsHandler (CPU* cpu)
         {
             #include "Commands.h"
             default:
+                printf("SIGILL\n");
                 // Error
                 break;
         }
@@ -113,51 +120,54 @@ int CpuCmdsHandler (CPU* cpu)
 
 //-----------------------------------------------------------------------------
 
-int CpuCmdDump (CPU* cpu, int ip)
+int CpuCmdDump (CPU* cpu, int ip, FILE* file)
 {
-    fprintf (stdout, "\nCode Dump():\n");
+    fprintf (file, "\nCode Dump():\n");
     
     for (int i = 0; i < cpu->codeSize; i++)
     {
-        printf ("%02X ", cpu->code[i]);
+        fprintf (file, "%02X ", cpu->code[i]);
     }
 
-    fprintf (stdout, "\n");
+    fprintf (file, "\n");
 
-    PrintSyms ('~', ip*3 - 3, stdout);
+    PrintSyms ('~', ip*3 - 3, file);
     
-    fprintf (stdout, "^ip = %d\n\n", ip);
+    fprintf (file, "^ip = %d\n\n", ip);
+
+    // return 0;
 }
 
 //-----------------------------------------------------------------------------
 
-int CpuRegDump (CPU* cpu)
+int CpuRegDump (CPU* cpu, FILE* file)
 {
     if (cpu == NULL) return 0;
 
-    printf ("REGS Dump():\n");
-    PrintArr (cpu->regs, NumRegs);
+    fprintf (file, "REGS Dump():\n");
+    PrintArr (cpu->regs, NumRegs, file);
+    // return 0;
 }
 
 //-----------------------------------------------------------------------------
 
-int CpuRamDump (CPU* cpu)
+int CpuRamDump (CPU* cpu, FILE* file)
 {
     if (cpu == NULL) return 0;
 
-    printf ("RAM Dump():\n");
-    PrintArr (cpu->RAM, RamSize);
+    fprintf (file, "RAM Dump():\n");
+    PrintArr (cpu->RAM, RamSize, file);
 }
 
 //-----------------------------------------------------------------------------
 
-int PrintArr (Elem_t* arr, int arrSize)
+int PrintArr (Elem_t* arr, int arrSize, FILE* file)
 {
     if (arr == NULL) return 0;
 
     for (int i = 0; i < arrSize; i++)
     {
-        printf ("[%d] = %d\n", i, arr[i]); 
+        fprintf (file, "[%d] = %g\n", i, double(arr[i])); 
     }
 
     return 1;

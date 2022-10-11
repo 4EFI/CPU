@@ -136,6 +136,8 @@ void*  CanaryRecalloc (void* data, size_t size, uint64_t leftCanary, uint64_t ri
 void*  Recalloc       (void* data, size_t size, int      curSize = 0);
 size_t MallocSize     (void* data);
 
+bool CompareDoubles (double a, double b, double accuracy = 1e-6);
+
 //---------------------------------------------------------------------------
 
 #define StackCtor(stack, dataSize) { _StackCtor (stack, dataSize, __FILE__, __PRETTY_FUNCTION__, #stack); }

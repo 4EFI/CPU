@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <malloc.h>
+#include <math.h>
 
 #include "Stack.h"
 #include "Assert.h"
@@ -319,13 +320,13 @@ void _StackDump (Stack_t* stack)
                                         isEmpty ? " " : "*", i);
 
                 // Print value                        
-                if(stack->data[i] == StackDataPoisonValue) 
+                if(CompareDoubles(double(stack->data[i]), double(StackDataPoisonValue))) 
                 {
                     fprintf (StackFileOut, "%s\n", "NAN (POISON)");
                 }
                 else     
                 {   
-                    fprintf (StackFileOut, "%d\n",  stack->data[i]);
+                    fprintf (StackFileOut, "%g\n",  double(stack->data[i]));
                 }
             }
         }
@@ -438,7 +439,7 @@ Elem_t StackPop (Stack_t* stack)
     
     ON_STACK_DUMP ( StackDump (stack); )
 
-    if (!stack->info.isStackValid) { LOG ("444444444"); return 0; }
+    if (!stack->info.isStackValid) return 0; 
 
     if (stack->size > 0) 
     {
@@ -595,6 +596,15 @@ size_t MallocSize (void* data)
     if (data == NULL) curNum = 0;
 
     return curNum;
+}
+
+//---------------------------------------------------------------------------
+
+bool CompareDoubles (double a, double b, double accuracy)
+{
+    if (fabs (a - b) < accuracy) return 1; 
+
+    return 0;
 }
 
 //---------------------------------------------------------------------------

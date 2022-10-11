@@ -15,7 +15,7 @@ pop rax
 
 push rax
 push 10
-jbe :next
+jbe next:
 
 dump
 

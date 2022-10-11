@@ -677,3 +677,542 @@ End of Log!
 00| src/asm.cpp:219: i = 0 r = 0 m = 0
 00| src/asm.cpp:219: i = 0 r = 0 m = 0
 End of Log!
+--------------------Tue Oct 11 21:00:48 2022--------------------
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+End of Log!
+--------------------Tue Oct 11 22:43:55 2022--------------------
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+End of Log!
+--------------------Tue Oct 11 22:45:43 2022--------------------
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+End of Log!
+--------------------Tue Oct 11 22:49:23 2022--------------------
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+End of Log!
+--------------------Tue Oct 11 23:20:37 2022--------------------
+00| src/asm.cpp:224: i = 1 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 0 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 1 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 1 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 0 m = 0
+End of Log!
+--------------------Tue Oct 11 23:27:04 2022--------------------
+00| src/asm.cpp:224: i = 1 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 0 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 1 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 1 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 0 m = 0
+End of Log!
+--------------------Tue Oct 11 23:28:25 2022--------------------
+00| src/asm.cpp:221: i = 1 r = 0 m = 0
+00| src/asm.cpp:221: i = 0 r = 1 m = 0
+00| src/asm.cpp:221: i = 0 r = 1 m = 0
+00| src/asm.cpp:221: i = 0 r = 1 m = 0
+00| src/asm.cpp:221: i = 0 r = 0 m = 0
+00| src/asm.cpp:221: i = 0 r = 0 m = 0
+00| src/asm.cpp:221: i = 0 r = 1 m = 0
+00| src/asm.cpp:221: i = 1 r = 0 m = 0
+00| src/asm.cpp:221: i = 0 r = 0 m = 0
+00| src/asm.cpp:221: i = 0 r = 1 m = 0
+00| src/asm.cpp:221: i = 0 r = 1 m = 0
+00| src/asm.cpp:221: i = 1 r = 0 m = 0
+00| src/asm.cpp:221: i = 0 r = 0 m = 0
+00| src/asm.cpp:221: i = 0 r = 0 m = 0
+End of Log!
+--------------------Tue Oct 11 23:29:07 2022--------------------
+--------------------Tue Oct 11 23:34:24 2022--------------------
+End of Log!
+--------------------Tue Oct 11 23:34:50 2022--------------------
+End of Log!
+--------------------Tue Oct 11 23:37:47 2022--------------------
+--------------------Tue Oct 11 23:40:18 2022--------------------
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+End of Log!
+--------------------Tue Oct 11 23:40:25 2022--------------------
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: ''
+End of Log!
+--------------------Tue Oct 11 23:40:31 2022--------------------
+--------------------Tue Oct 11 23:42:11 2022--------------------
+--------------------Tue Oct 11 23:42:50 2022--------------------
+00| src/asm.cpp:61: 'push'
+00| src/asm.cpp:223: i = 1 r = 0 m = 0
+00| src/asm.cpp:61: 'pop'
+00| src/asm.cpp:223: i = 0 r = 1 m = 0
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: 'next:'
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: 'push'
+00| src/asm.cpp:223: i = 0 r = 1 m = 0
+00| src/asm.cpp:61: 'push'
+00| src/asm.cpp:223: i = 0 r = 1 m = 0
+00| src/asm.cpp:61: 'mul'
+00| src/asm.cpp:223: i = 0 r = 0 m = 0
+00| src/asm.cpp:61: 'out'
+00| src/asm.cpp:223: i = 0 r = 0 m = 0
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: 'push'
+00| src/asm.cpp:223: i = 0 r = 1 m = 0
+00| src/asm.cpp:61: 'push'
+00| src/asm.cpp:223: i = 1 r = 0 m = 0
+00| src/asm.cpp:61: 'add'
+00| src/asm.cpp:223: i = 0 r = 0 m = 0
+00| src/asm.cpp:61: 'pop'
+00| src/asm.cpp:223: i = 0 r = 1 m = 0
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: 'push'
+00| src/asm.cpp:223: i = 0 r = 1 m = 0
+00| src/asm.cpp:61: 'push'
+00| src/asm.cpp:223: i = 1 r = 0 m = 0
+00| src/asm.cpp:61: 'jbe'
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: 'dump'
+00| src/asm.cpp:223: i = 0 r = 0 m = 0
+00| src/asm.cpp:61: ''
+00| src/asm.cpp:61: 'hlt'
+00| src/asm.cpp:223: i = 0 r = 0 m = 0
+End of Log!
+--------------------Tue Oct 11 23:45:47 2022--------------------
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+00| src/asm.cpp:63: ''
+End of Log!
+--------------------Tue Oct 11 23:46:04 2022--------------------
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+00| src/asm.cpp:63: MaxStrLen
+00| src/asm.cpp:65: ''
+End of Log!
+--------------------Tue Oct 11 23:49:20 2022--------------------
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+End of Log!
+--------------------Tue Oct 11 23:49:36 2022--------------------
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: MaxStrLen
+00| src/asm.cpp:66: ''
+End of Log!
+--------------------Tue Oct 11 23:52:11 2022--------------------
+00| src/asm.cpp:64: --------------------Tue Oct 11 23:52:35 2022--------------------
+00| src/asm.cpp:57: --------------------Wed Oct 12 00:04:09 2022--------------------
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+End of Log!
+--------------------Wed Oct 12 00:04:35 2022--------------------
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+End of Log!
+--------------------Wed Oct 12 00:04:47 2022--------------------
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'push'
+00| src/asm.cpp:228: i = 1 r = 0 m = 0
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'pop'
+00| src/asm.cpp:228: i = 0 r = 1 m = 0
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'next:'
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'push'
+00| src/asm.cpp:228: i = 0 r = 1 m = 0
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'push'
+00| src/asm.cpp:228: i = 0 r = 1 m = 0
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'mul'
+00| src/asm.cpp:228: i = 0 r = 0 m = 0
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'out'
+00| src/asm.cpp:228: i = 0 r = 0 m = 0
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'push'
+00| src/asm.cpp:228: i = 0 r = 1 m = 0
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'push'
+00| src/asm.cpp:228: i = 1 r = 0 m = 0
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'add'
+00| src/asm.cpp:228: i = 0 r = 0 m = 0
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'pop'
+00| src/asm.cpp:228: i = 0 r = 1 m = 0
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'push'
+00| src/asm.cpp:228: i = 0 r = 1 m = 0
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'push'
+00| src/asm.cpp:228: i = 1 r = 0 m = 0
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'jbe'
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'dump'
+00| src/asm.cpp:228: i = 0 r = 0 m = 0
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: ''
+00| src/asm.cpp:64: 255
+00| src/asm.cpp:66: 'hlt'
+00| src/asm.cpp:228: i = 0 r = 0 m = 0
+End of Log!
+--------------------Wed Oct 12 00:06:23 2022--------------------
+00| src/asm.cpp:224: i = 1 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 0 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 1 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 0 r = 1 m = 0
+00| src/asm.cpp:224: i = 1 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 0 m = 0
+00| src/asm.cpp:224: i = 0 r = 0 m = 0
+End of Log!
