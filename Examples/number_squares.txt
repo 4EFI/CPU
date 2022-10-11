@@ -17,4 +17,6 @@ push rax
 push 10
 jbe :next
 
+dump
+
 hlt

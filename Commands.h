@@ -68,7 +68,23 @@ DEF_CMD (JMP, 8,
 
 #undef DEF_JMP
 
-DEF_CMD (DUMP, 31)
+DEF_CMD (DUMP, 31, 
+{
+    StackFileOut = stdout;
+    
+    StackDump (&cpu->stack);
+
+    CpuCmdDump (cpu, ip);
+
+    CpuRegDump (cpu);
+    printf ("\n");
+    CpuRamDump (cpu);
+
+    PrintSyms ('-', NumDumpDividers, stdout);
+    printf    ("\n");
+
+    StackFileOut = LogFile;
+})
 
 #undef S_POP
 #undef S_PUSH

@@ -112,3 +112,55 @@ int CpuCmdsHandler (CPU* cpu)
 }
 
 //-----------------------------------------------------------------------------
+
+int CpuCmdDump (CPU* cpu, int ip)
+{
+    fprintf (stdout, "\nCode Dump():\n");
+    
+    for (int i = 0; i < cpu->codeSize; i++)
+    {
+        printf ("%02X ", cpu->code[i]);
+    }
+
+    fprintf (stdout, "\n");
+
+    PrintSyms ('~', ip*3 - 3, stdout);
+    
+    fprintf (stdout, "^ip = %d\n\n", ip);
+}
+
+//-----------------------------------------------------------------------------
+
+int CpuRegDump (CPU* cpu)
+{
+    if (cpu == NULL) return 0;
+
+    printf ("REGS Dump():\n");
+    PrintArr (cpu->regs, NumRegs);
+}
+
+//-----------------------------------------------------------------------------
+
+int CpuRamDump (CPU* cpu)
+{
+    if (cpu == NULL) return 0;
+
+    printf ("RAM Dump():\n");
+    PrintArr (cpu->RAM, RamSize);
+}
+
+//-----------------------------------------------------------------------------
+
+int PrintArr (Elem_t* arr, int arrSize)
+{
+    if (arr == NULL) return 0;
+
+    for (int i = 0; i < arrSize; i++)
+    {
+        printf ("[%d] = %d\n", i, arr[i]); 
+    }
+
+    return 1;
+}
+
+//-----------------------------------------------------------------------------

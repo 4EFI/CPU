@@ -115,7 +115,7 @@ int _StackCtor (Stack_t* stack, int dataSize, const char* mainFileName,
 
     ON_HASH_PROTECTION ( stack->info.hashValue = StackHashProtection (stack); )
 
-    StackDump (stack);
+    ON_STACK_DUMP ( StackDump (stack); )
 
     return 1;
 }
@@ -344,7 +344,8 @@ int StackResize (Stack_t* stack, int numResize, int sideResize)
 {
     Assert          (stack != NULL, 0); 
     StackErrHandler (stack); 
-    StackDump       (stack);
+
+    ON_STACK_DUMP ( StackDump (stack); )
 
     switch (sideResize)
     {
@@ -372,8 +373,7 @@ int StackResize (Stack_t* stack, int numResize, int sideResize)
     stack->capacity = numResize;
     
     ON_HASH_PROTECTION ( stack->info.hashValue = StackHashProtection (stack); )
-
-    StackDump (stack);
+    ON_STACK_DUMP      ( StackDump (stack); )
 
     return stack->capacity;
 }
@@ -393,7 +393,7 @@ void StackRecalloc (Stack_t* stack, size_t size, uint64_t leftCanary, uint64_t r
     if (stack->data != NULL) 
     {
         // Fill data with poison (increase data)
-        #ifndef NDUMP
+        #ifndef N_STACK_DUMP
             if (stack->capacity < newStackCapacity)
             {
                 for (size_t i = stack->capacity; i < newStackCapacity; i++)
@@ -412,9 +412,9 @@ void StackRecalloc (Stack_t* stack, size_t size, uint64_t leftCanary, uint64_t r
 void StackPush (Stack_t* stack, Elem_t value)
 {
     Assert          (stack != NULL); 
-
     StackErrHandler (stack);
-    StackDump       (stack);
+
+    ON_STACK_DUMP ( StackDump (stack); )
 
     if (!stack->info.isStackValid) return;
 
@@ -426,7 +426,7 @@ void StackPush (Stack_t* stack, Elem_t value)
 
     ON_HASH_PROTECTION ( stack->info.hashValue = StackHashProtection (stack); )
     
-    StackDump (stack);
+    ON_STACK_DUMP ( StackDump (stack); )
 }
 
 //---------------------------------------------------------------------------
@@ -434,9 +434,9 @@ void StackPush (Stack_t* stack, Elem_t value)
 Elem_t StackPop (Stack_t* stack)
 {
     Assert          (stack != NULL, StackDataPoisonValue); 
-
     StackErrHandler (stack);
-    StackDump       (stack);
+    
+    ON_STACK_DUMP ( StackDump (stack); )
 
     if (!stack->info.isStackValid) { LOG ("444444444"); return 0; }
 
@@ -451,14 +451,14 @@ Elem_t StackPop (Stack_t* stack)
 
         ON_HASH_PROTECTION ( stack->info.hashValue = StackHashProtection (stack); )
         
-        StackDump (stack);
+        ON_STACK_DUMP ( StackDump (stack); )
 
         return stack->data[stack->size];
     }
 
     ON_HASH_PROTECTION ( stack->info.hashValue = StackHashProtection (stack); )
 
-    StackDump (stack);
+    ON_STACK_DUMP ( StackDump (stack); )
     
     return StackDataPoisonValue;
 }

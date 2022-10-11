@@ -21,6 +21,8 @@ extern int         CurLine;
 
 extern const Elem_t StackDataPoisonValue;
 
+extern FILE* StackFileOut;
+
 //---------------------------------------------------------------------------
 
 extern const int ResizeUp;
@@ -44,10 +46,10 @@ extern const int ResizeDown;
 #endif
 
 // No dump
-#ifndef NDUMP 
-    #define ON_DUMP(...) __VA_ARGS__
+#ifndef N_STACK_DUMP 
+    #define ON_STACK_DUMP(...) __VA_ARGS__
 #else
-    #define ON_DUMP(...)
+    #define ON_STACK_DUMP(...)
 #endif
 
 //---------------------------------------------------------------------------
@@ -138,14 +140,10 @@ size_t MallocSize     (void* data);
 
 #define StackCtor(stack, dataSize) { _StackCtor (stack, dataSize, __FILE__, __PRETTY_FUNCTION__, #stack); }
 
-#ifndef NDUMP
-    #define StackDump(stack) { CurFileName = __FILE__;            \
-                               CurFuncName = __PRETTY_FUNCTION__; \
-                               CurLine     = __LINE__;            \
-                               _StackDump (stack); }
-#else 
-    #define StackDump(...) ;
-#endif
+#define StackDump(stack) { CurFileName = __FILE__;            \
+                           CurFuncName = __PRETTY_FUNCTION__; \
+                           CurLine     = __LINE__;            \
+                           _StackDump (stack); }
 
 //---------------------------------------------------------------------------
 

@@ -9,6 +9,10 @@ static const int RamSize   = 100;
 
 static const int MaxStrLen = 255;
 
+static int NumDumpDividers = 65;
+
+//-----------------------------------------------------------------------------
+
 enum Reg_i
 {
     R0X = 0,
@@ -26,7 +30,7 @@ struct CMD
     unsigned char memory : 1;
 };
 
-#define NDUMP
+#define N_STACK_DUMP
 //#define NHASH
 //#define NCANARY
 
