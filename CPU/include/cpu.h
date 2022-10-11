@@ -7,19 +7,10 @@
 
 //-----------------------------------------------------------------------------
 
-struct Label
-{
-    int  val;
-    char name[MaxStrLen];
-};
-
-
 struct CPU
 {
-    Elem_t RAM[RamSize];
-    
-    Elem_t regs  [NumRegs];
-    Label  labels[NumLabels];
+    Elem_t RAM [RamSize];
+    Elem_t regs[NumRegs];
     
     Stack_t stack; 
     

@@ -18,6 +18,9 @@ int AsmCtor (ASM* asm_s)
     
     TextInit (&asm_s->text); 
 
+    // Fill all with zero
+    memset (asm_s->labels, 0, NumLabels * sizeof (Label));
+
     asm_s->codeSize = 0;
     asm_s->code     = NULL;
 
@@ -49,14 +52,26 @@ int AsmMakeArrCmds (ASM* asm_s)
     for (int i = 0; i < asm_s->text.numLines; i++)
     {
         char cmdName[MaxStrLen] = "";
+    
+        char* strForRead = asm_s->text.lines[i].str;
 
         int numReadSyms = 0;
-        sscanf (asm_s->text.lines[i].str, "%s%n", cmdName, &numReadSyms); // Get command name
+        sscanf (strForRead, "%s%n", cmdName, &numReadSyms); // Get command name
 
         if (numReadSyms == 0) continue;
 
+        // Check label
+        char* sym = strchr (cmdName, ':');
+
+        if (sym)
+        {
+            AsmLabelHandler (asm_s, strForRead, sym - strForRead, ip);
+            continue;
+        }
+
+
         int ipCopy = ip;
-        AsmArgHandler (asm_s, asm_s->text.lines[i].str + numReadSyms /*Str for read from*/, &ip);
+        AsmArgHandler (asm_s, strForRead + numReadSyms /*Str for read from*/, &ip);
 
 
         CMD* cmd = (CMD*)(&asm_s->code[ipCopy]);
@@ -86,11 +101,76 @@ int AsmMakeArrCmds (ASM* asm_s)
 
 //-----------------------------------------------------------------------------
 
+int AsmLabelHandler (ASM* asm_s, const char* str, int len, int ip)
+{
+    if (asm_s == NULL || str == NULL) return 0;
+
+    int strPos = GetLabelIndex (asm_s->labels, NumLabels, str, len);
+
+    if (strPos == -1)
+    {
+        int emptyLabel = -1;
+
+        // Find empty label
+        for (int i = 0; i < NumLabels; i++)
+        {
+            if (asm_s->labels[i].name.str == NULL) 
+            {
+                emptyLabel = i; 
+                break; 
+            }
+        }
+
+        String* str_ptr = &asm_s->labels[emptyLabel].name;
+
+        str_ptr->str = (char*)str;
+        str_ptr->len = len;
+
+        asm_s->labels[emptyLabel].val = ip;
+    }
+    else 
+    {
+        printf ("Label \"%.*s\" already exists...\n", len, str);
+        return 0;
+    }
+
+    return 1;
+}
+
+//-----------------------------------------------------------------------------
+
 int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
 {
     if (asm_s == NULL || strForRead == NULL) return 0;
     
     CMD* cmd = (CMD*)(&asm_s->code[(*ip)++]);
+
+    char* sym = strchr (strForRead, ':');
+
+    if (sym)
+    {
+        int len = 0;
+        strForRead = sym + 1;
+
+        sscanf (strForRead, "%*s%n", &len);
+
+        int pos = GetLabelIndex (asm_s->labels, NumLabels, strForRead, len);
+
+        if (pos == -1)
+        {
+            printf ("Labal \"%.*s\" does not exist...\n", len, strForRead);
+            return -1;
+        }
+
+        *(Elem_t*)(asm_s->code + *ip) = asm_s->labels[pos].val;
+        
+        (*ip) += sizeof (Elem_t); 
+
+        cmd->immed = 1;
+
+        return 1;
+    }
+
     
     Elem_t val = 0;
     char reg_i[MaxStrLen] = "";
@@ -98,7 +178,7 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
     bool isStartMem = false;
     
     // check [
-    char* sym = strchr (strForRead, '[');
+    sym = strchr (strForRead, '[');
     
     int numSkipSyms = 0;
     if (sym) { isStartMem = true; numSkipSyms = sym - strForRead + 1; }
@@ -139,6 +219,19 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
     FLOG ("i = %d r = %d m = %d", cmd->immed, cmd->reg, cmd->memory);
 
     return 1;
+}
+
+int GetLabelIndex (Label* labels, int numLabels, const char* str, int len)
+{
+    for (int i = 0; i < numLabels; i++)
+    {
+        if (labels[i].name.str != NULL && strncmp (str, labels[i].name.str, len) == 0)
+        {
+            return i;
+        }
+    }
+
+    return -1;  
 }
 
 //-----------------------------------------------------------------------------

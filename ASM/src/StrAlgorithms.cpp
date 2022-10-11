@@ -368,3 +368,47 @@ int StrReverseCmp (const char* str1, size_t len1, const char* str2, size_t len2)
 }
 
 //-----------------------------------------------------------------------------
+
+int WordPosInArray (const char* word, const char* arr[], int sizeArr, int n)
+{
+    //{ ASSERT
+    assert (word != NULL);
+    assert (arr  != NULL);
+    //}
+
+    if (n <= 0) n = strlen (word) + 1;
+
+    for (int i = 0; i < sizeArr; i++)
+    {
+        if (strncmp (word, arr[i], n) == 0)
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+//-----------------------------------------------------------------------------
+
+int StringPosInArray (String* str, String arr[], int sizeArr, int n)
+{
+    //{ ASSERT
+    assert (str != NULL);
+    assert (arr != NULL);
+    //}
+
+    if (n <= 0) n = str->len + 1;
+
+    for (int i = 0; i < sizeArr; i++)
+    {
+        if (strncmp (str->str, arr[i].str, n) == 0)
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+//-----------------------------------------------------------------------------

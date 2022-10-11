@@ -14,9 +14,8 @@ int CpuCtor (CPU* cpu)
     StackCtor (&cpu->stack, 1);
 
     // Fill all with zero
-    memset (cpu->RAM,    0, RamSize   * sizeof (Elem_t));
-    memset (cpu->regs,   0, NumRegs   * sizeof (Elem_t));
-    memset (cpu->labels, 0, NumLabels * sizeof (Label) );
+    memset (cpu->RAM,  0, RamSize * sizeof (Elem_t));
+    memset (cpu->regs, 0, NumRegs * sizeof (Elem_t));
 
     cpu->codeSize = 0;
     cpu->code     = NULL;

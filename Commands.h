@@ -1,6 +1,6 @@
 
-#define S_POP       StackPop  (&cpu->stack); 
-#define S_PUSH(VAL) StackPush (&cpu->stack, VAL);
+#define S_POP       StackPop  (&cpu->stack)
+#define S_PUSH(VAL) StackPush (&cpu->stack, VAL)
 
 DEF_CMD (HLT, 0, 
 {
@@ -50,12 +50,25 @@ DEF_CMD (POP, 7,
     *arg_ptr = StackPop (&cpu->stack);
 })
 
+// Jumpes
 DEF_CMD (JMP, 8,
 {
     ip = arg_val;
 })
 
-DEF_CMD (DUMP, 15)
+#define DEF_JMP(NAME, NUM, COND)             \
+    DEF_CMD (NAME, NUM,                      \
+    {                                        \
+        Elem_t val_2 = S_POP, val_1 = S_POP; \
+                                             \
+        if (val_1 COND val_2) ip = arg_val;  \
+    })
+
+#include "Jumpes.h"
+
+#undef DEF_JMP
+
+DEF_CMD (DUMP, 31)
 
 #undef S_POP
 #undef S_PUSH

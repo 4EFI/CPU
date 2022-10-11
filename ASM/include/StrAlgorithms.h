@@ -62,6 +62,9 @@ void PrintLines (FILE* file, String* arrStrs, int numLines);
 
 int StrReverseCmp (const char* str1, size_t len1, const char* str2, size_t len2);
 
+int WordPosInArray   (const char* word, const char* arr[], int sizeArr, int n = 0);
+int StringPosInArray (String*     str,  String      arr[], int sizeArr, int n = 0);
+
 //-----------------------------------------------------------------------------
 
 #endif
