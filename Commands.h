@@ -81,6 +81,7 @@ DEF_CMD (DUMP, 31,
 
     PrintSyms ('-', NumDumpDividers, stdout);
     printf    ("\n");
+    
 
     StackFileOut = LogFile;
 })
