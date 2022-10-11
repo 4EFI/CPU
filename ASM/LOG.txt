@@ -613,3 +613,67 @@ End of Log!
 00| src/asm.cpp:219: i = 0 r = 0 m = 0
 00| src/asm.cpp:219: i = 0 r = 0 m = 0
 End of Log!
+--------------------Tue Oct 11 20:20:58 2022--------------------
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+End of Log!
+--------------------Tue Oct 11 20:21:21 2022--------------------
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+End of Log!
+--------------------Tue Oct 11 20:21:44 2022--------------------
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+End of Log!
+--------------------Tue Oct 11 20:33:29 2022--------------------
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 0 r = 1 m = 0
+00| src/asm.cpp:219: i = 1 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+00| src/asm.cpp:219: i = 0 r = 0 m = 0
+End of Log!

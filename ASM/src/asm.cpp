@@ -158,7 +158,7 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
 
         if (pos == -1)
         {
-            printf ("Labal \"%.*s\" does not exist...\n", len, strForRead);
+            printf ("Label \"%.*s\" does not exist...\n", len, strForRead);
             return -1;
         }
 

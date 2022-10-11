@@ -31,3 +31,12 @@ End of Log!
 --------------------Tue Oct 11 19:33:10 2022--------------------
 00| src/cpu.cpp:35: Code Size = 37
 End of Log!
+--------------------Tue Oct 11 20:18:29 2022--------------------
+00| src/cpu.cpp:35: Code Size = 37
+End of Log!
+--------------------Tue Oct 11 20:32:56 2022--------------------
+00| src/cpu.cpp:35: Code Size = 33
+End of Log!
+--------------------Tue Oct 11 20:33:37 2022--------------------
+00| src/cpu.cpp:35: Code Size = 37
+End of Log!
