@@ -18,14 +18,6 @@
 
 int LogLvlTree = 0;
 
-#ifndef ON_LOG_FILE
-    #define OpenLogFile() NULL
-#endif
-
-FILE* LogFile = OpenLogFile();
-
-#undef OpenLogFile()
-
 //-----------------------------------------------------------------------------
 //{ Class FunctionsCallTree implementation
 //-----------------------------------------------------------------------------

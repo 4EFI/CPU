@@ -20,7 +20,9 @@ DEF_CMD (ADD, 2,
 
 DEF_CMD (SUB, 3, 
 {
-    S_PUSH (-S_POP + S_POP);
+    Elem_t val_2 = S_POP, val_1 = S_POP;
+    
+    S_PUSH (val_1 - val_2);
 })
 
 DEF_CMD (MUL, 4, 
@@ -67,6 +69,11 @@ DEF_CMD (JMP, 8,
 #include "Jumpes.h"
 
 #undef DEF_JMP
+
+DEF_CMD (SQRT, 15, 
+{
+    S_PUSH (sqrt (S_POP));
+})
 
 DEF_CMD (DUMP, 31, 
 { 

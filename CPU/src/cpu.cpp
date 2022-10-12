@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #include "cpu.h"
 #include "LOG.h"
@@ -73,6 +74,11 @@ Elem_t* CpuGetArg (CPU* cpu, int* ip, Elem_t* val)
 
     if (cmd.memory)
     {
+        Elem_t temp = 0;
+        memcpy (&temp, &cpu->RAM[int(*val)], sizeof (Elem_t));
+
+        (*val) += temp;
+        
         // Check val
         arg_ptr = &cpu->RAM[int(*val)];
     }

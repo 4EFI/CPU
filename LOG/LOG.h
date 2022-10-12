@@ -38,8 +38,14 @@ extern int LogLvlTree;
 
 FILE* OpenLogFile (const char* path = "LOG.txt");
 
+#ifndef ON_LOG_FILE
+    #define OpenLogFile() NULL
+#endif
+
 /// \brief 	The file to which the logs are output
-extern FILE* LogFile;
+static FILE* LogFile = OpenLogFile();
+
+#undef OpenLogFile()
 
 //-----------------------------------------------------------------------------
 
