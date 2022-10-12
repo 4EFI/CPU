@@ -9,6 +9,13 @@
 
 //-----------------------------------------------------------------------------
 
+const char* GetCurOptionStr()
+{
+    return Argv[__CUR_OPT__];
+}
+
+//-----------------------------------------------------------------------------
+
 int NumWordInArray (const char* word, const char* arr[], int sizeArr)
 {
     //{ ASSERT

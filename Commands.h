@@ -70,7 +70,7 @@ DEF_CMD (JMP, 8,
 
 DEF_CMD (DUMP, 31, 
 { 
-    StackDump (&cpu->stack);
+    if (LogFile) StackDump (&cpu->stack);
 
     CpuCmdDump (cpu, ip, LogFile);
     CpuRegDump (cpu, LogFile);

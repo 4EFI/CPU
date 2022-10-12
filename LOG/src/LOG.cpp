@@ -18,7 +18,13 @@
 
 int LogLvlTree = 0;
 
+#ifndef ON_LOG_FILE
+    #define OpenLogFile() NULL
+#endif
+
 FILE* LogFile = OpenLogFile();
+
+#undef OpenLogFile()
 
 //-----------------------------------------------------------------------------
 //{ Class FunctionsCallTree implementation
@@ -44,6 +50,8 @@ FunctionsCallTree::~FunctionsCallTree()
 
 void _LOG (FILE* file, const char fileName[], const int line, const char str[], ...)
 {   
+    if (file == NULL) return;
+    
     va_list arg = {};
     va_start (arg, str);
 

@@ -50,4 +50,3 @@ $(OPT_OBJ_DIR)%.o : $(OPT_SRC_DIR)%.cpp
 
 clear: 
 	rm -f $(OBJ_DIR)*.o
-	rm -f $(OPT_OBJ_DIR)*.o

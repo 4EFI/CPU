@@ -32,8 +32,6 @@ int CpuGetCmdsArr (CPU* cpu, FILE* file)
     fscanf (file, "%*s %*d");
     fscanf (file, "%d ", &cpu->codeSize);
 
-    LOG ("Code Size = %d", cpu->codeSize);
-
     cpu->code = (char*)calloc (cpu->codeSize, sizeof (char));
 
     fread (cpu->code, sizeof (char), cpu->codeSize, file);

@@ -31,6 +31,7 @@ struct CMD
     unsigned char memory : 1;
 };
 
+#define ON_LOG_FILE
 #define N_STACK_DUMP
 //#define NHASH
 //#define NCANARY

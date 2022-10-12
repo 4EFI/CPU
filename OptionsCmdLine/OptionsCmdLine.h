@@ -13,6 +13,8 @@
 
 static const char** Argv = NULL; 
 
+static int __NUM_OPTIONS__ = 0;
+
 static int __CUR_OPT__ = 1;
 
 //{----------------------------------------------------------------------------
@@ -28,14 +30,16 @@ static int __CUR_OPT__ = 1;
 
 int NumWordInArray (const char* word, const char* arr[], int sizeArr);
 
+const char* GetCurOptionStr();
+
 //-----------------------------------------------------------------------------
 
 #define START_OPT_HANDLER(argc, argv)          \
     Argv = argv;                               \
-    for ( ; __CUR_OPT__ < argc; __CUR_OPT__++) \
-    {                                           
+    __NUM_OPTIONS__ = argc;                    \
+    for ( ; __CUR_OPT__ < argc; __CUR_OPT__++)                                           
 
-#define FINISH_OPT_HANDLER() }
+#define FINISH_OPT_HANDLER(...) __VA_ARGS__
 
 #define OPT_HANDLER(option_name, ...)                \
 {                                                    \

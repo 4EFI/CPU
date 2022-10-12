@@ -4,9 +4,17 @@
 
 //-----------------------------------------------------------------------------
 
-int main()
+int main(int argc, const char* argv[])
 {
-    FILE* file = fopen ("../Examples/number_squares.code", "rb");
+    FILE* file = NULL;
+
+    if (argc > 1) file = fopen (argv[1], "rb");
+
+    if (!file) 
+    {
+        printf ("Cpu file opening error...\n");
+        return -1;
+    }
 
     if (file == NULL) printf ("File \"%s\" does not exist...\n", "" /*fileName*/);
 

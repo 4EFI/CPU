@@ -154,7 +154,7 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
         int len = 0;
         strForRead = sym + 1;
 
-        sscanf (strForRead, "%" STR(MaxStrLen) "*s%n", &len);
+        sscanf (strForRead, "%*s%n", &len);
 
         int pos = GetLabelIndex (asm_s->labels, NumLabels, strForRead, len);
 
@@ -196,7 +196,7 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
         
         (*ip) += sizeof (Elem_t); 
 
-        asm_s->code[(*ip)++] = GetRegIndex (reg_i);
+        asm_s->code[(*ip)++] = char(GetRegIndex (reg_i));
     }
 
     else if (sscanf (strForRead + numSkipSyms, "%lf", &val) == 1) // if value
@@ -212,7 +212,7 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
     {    
         cmd->reg = 1;
 
-        asm_s->code[(*ip)++] = GetRegIndex (reg_i);
+        asm_s->code[(*ip)++] = char(GetRegIndex (reg_i));
     }
 
     // Check ]
