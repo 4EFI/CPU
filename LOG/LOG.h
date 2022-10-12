@@ -71,19 +71,6 @@ void PrintCurTime (FILE* file);
 #define LOG_INFO(file, fileName, line) \
     fprintf (file, "%s:%d: ", fileName, line);
 
-/*
-#define _LOG(file, fileName, line, str, ...)     \
-{                                                \
-    if ((file) == stderr) fprintf (file, ">>>"); \
-    fprintf    (file, "%02d", LogLvlTree);       \
-    PutsSpaces (file, LogLvlTree * TabNumSym);   \
-                                                 \
-    LOG_INFO (file, fileName, line);             \
-    fprintf  (file, str, ##__VA_ARGS__);         \
-    fputc    ('\n', file);                       \
-}
-*/
-
 
 #ifndef NLOG
 

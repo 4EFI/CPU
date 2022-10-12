@@ -177,17 +177,14 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
     Elem_t val = 0;
     char reg_i[MaxStrLen] = "";
 
-    // isMemTreatment
-    bool isStartMem = false;
+    bool isMemTreatment = false;
     
     // check [
     sym = strchr (strForRead, '[');
     
     int numSkipSyms = 0;
-    if (sym) { isStartMem = true; numSkipSyms = sym - strForRead + 1; }
+    if (sym) { isMemTreatment = true; numSkipSyms = sym - strForRead + 1; }
 
-    // [ 10 +    rax ]
-    // 
     if /**/ (sscanf (strForRead + numSkipSyms, "%lf + %" STR(MaxStrLen) "s",    &val,    reg_i) == 2 || 
              sscanf (strForRead + numSkipSyms, " %" STR(MaxStrLen) "[^+] + %lf", reg_i, &val  ) == 2) 
     /* if (value + reg_value) || (reg_value + value) */
@@ -219,7 +216,7 @@ int AsmArgHandler (ASM* asm_s, const char* strForRead, int* ip)
     }
 
     // Check ]
-    if (isStartMem && strchr (strForRead + numSkipSyms, ']')) cmd->memory = 1; 
+    if (isMemTreatment && strchr (strForRead + numSkipSyms, ']')) cmd->memory = 1; 
 
     FLOG ("i = %d r = %d m = %d", cmd->immed, cmd->reg, cmd->memory);
 

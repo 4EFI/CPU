@@ -33,21 +33,21 @@ extern const int ResizeDown;
 
 // No hash protection
 #ifndef NHASH
-    #define ON_HASH_PROTECTION(...)  __VA_ARGS__  
+    #define ON_HASH_PROTECTION(...)   __VA_ARGS__  
 #else
     #define ON_HASH_PROTECTION(...) 
 #endif
 
 // No canary protection
 #ifndef NCANARY
-    #define ON_CANARY_PROTECTION(...) __VA_ARGS__  
+    #define ON_CANARY_PROTECTION(...)  __VA_ARGS__  
 #else
     #define ON_CANARY_PROTECTION(...) 
 #endif
 
 // No dump
 #ifndef N_STACK_DUMP 
-    #define ON_STACK_DUMP(...) __VA_ARGS__
+    #define ON_STACK_DUMP(...)  __VA_ARGS__
 #else
     #define ON_STACK_DUMP(...)
 #endif

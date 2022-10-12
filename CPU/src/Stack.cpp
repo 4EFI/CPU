@@ -197,7 +197,7 @@ int StackErrHandler (Stack_t* stack)
         stack->info.errStatus |= StackErrors::INVALID_SIZE;
     }
 
-    if (stack->capacity < 0)
+    if (stack->capacity <= 0)
     {
         stack->info.errStatus |= StackErrors::INVALID_CAPACITY;
     }

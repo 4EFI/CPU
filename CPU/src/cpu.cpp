@@ -122,6 +122,8 @@ int CpuCmdsHandler (CPU* cpu)
 
 int CpuCmdDump (CPU* cpu, int ip, FILE* file)
 {
+    if (cpu == NULL || file == NULL) return 0;
+    
     fprintf (file, "\nCode Dump():\n");
     
     for (int i = 0; i < cpu->codeSize; i++)
@@ -135,35 +137,38 @@ int CpuCmdDump (CPU* cpu, int ip, FILE* file)
     
     fprintf (file, "^ip = %d\n\n", ip);
 
-    // return 0;
+    return 1;
 }
 
 //-----------------------------------------------------------------------------
 
 int CpuRegDump (CPU* cpu, FILE* file)
 {
-    if (cpu == NULL) return 0;
+    if (cpu == NULL || file == NULL) return 0;
 
     fprintf (file, "REGS Dump():\n");
     PrintArr (cpu->regs, NumRegs, file);
-    // return 0;
+    
+    return 1;
 }
 
 //-----------------------------------------------------------------------------
 
 int CpuRamDump (CPU* cpu, FILE* file)
 {
-    if (cpu == NULL) return 0;
+    if (cpu == NULL || file == NULL) return 0;
 
     fprintf (file, "RAM Dump():\n");
     PrintArr (cpu->RAM, RamSize, file);
+
+    return 1;
 }
 
 //-----------------------------------------------------------------------------
 
 int PrintArr (Elem_t* arr, int arrSize, FILE* file)
 {
-    if (arr == NULL) return 0;
+    if (file == NULL || arr == NULL) return 0;
 
     for (int i = 0; i < arrSize; i++)
     {

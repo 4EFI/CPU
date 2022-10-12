@@ -56,12 +56,12 @@ DEF_CMD (JMP, 8,
     ip = arg_val;
 })
 
-#define DEF_JMP(NAME, NUM, COND)             \
-    DEF_CMD (NAME, NUM,                      \
-    {                                        \
-        Elem_t val_2 = S_POP, val_1 = S_POP; \
-                                             \
-        if (val_1 COND val_2) ip = arg_val;  \
+#define DEF_JMP(NAME, NUM, COND)                  \
+    DEF_CMD (NAME, NUM,                           \
+    {                                             \
+        Elem_t val_2 = S_POP, val_1 = S_POP;      \
+                                                  \
+        if (val_1 COND val_2) ip = int(arg_val);  \
     })
 
 #include "Jumpes.h"
