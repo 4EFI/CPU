@@ -25,18 +25,19 @@ struct ASM
     char* code;
 };
 
-int AsmCtor (ASM* asm_s);
-int AsmDtor (ASM* asm_s);
+int AsmCtor( ASM* asm_s );
+int AsmDtor( ASM* asm_s );
 
-int AsmGetCmds      (ASM* asm_s, FILE* fileIn);
-int AsmLabelHandler (ASM* asm_s, const char* str,        int  len, int ip);
-int AsmArgHandler   (ASM* asm_s, const char* strForRead, int* ip);
-int AsmMakeArrCmds  (ASM* asm_s);
-int AsmMakeOutFile  (ASM* asm_s, FILE* fileOut);
+int AsmGetCmds       ( ASM* asm_s, FILE* fileIn );
+int AsmLabelHandler  ( ASM* asm_s, const char* str,        int  len, int ip );
+int AsmArgJumpHandler( ASM* asm_s, const char* strForRead, int* ip );
+int AsmArgHandler    ( ASM* asm_s, const char* strForRead, int* ip );
+int AsmMakeArrCmds   ( ASM* asm_s) ;
+int AsmMakeBinFile   ( ASM* asm_s, FILE* fileOut );
 
-int GetLabelIndex (Label* labels, int numLabels, const char* str, int len);
+int GetLabelIndex( Label* labels, int numLabels, const char* str, int len );
 
-int GetRegIndex (const char* reg);
+int GetRegIndex( const char* reg );
 
 //-----------------------------------------------------------------------------
 

@@ -37,7 +37,7 @@ int main (int argc, const char* argv[])
     AsmGetCmds (&asm_s, fileIn);
 
     AsmMakeArrCmds (&asm_s);
-    AsmMakeOutFile (&asm_s, fileOut);
+    AsmMakeBinFile (&asm_s, fileOut);
 
     fclose (fileIn);
     fclose (fileOut);
