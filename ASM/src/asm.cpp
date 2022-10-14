@@ -58,9 +58,11 @@ int AsmMakeArrCmds( ASM* asm_s )
         char* strForRead = asm_s->text.lines[i].str;
 
         // Check label
-        if( AsmLabelHandler( asm_s, strForRead, ip ) ) continue;
+        int      isLabel = AsmLabelHandler( asm_s, strForRead, ip ); 
+        if/* */( isLabel ==  1 ) continue;
+        else if( isLabel == -1 ) return -1;
         
-        
+    
         // Get command
         char cmdName[MaxStrLen] = "";
 
@@ -120,7 +122,11 @@ int AsmLabelHandler( ASM* asm_s, const char* strForRead, int ip )
     if( labelPos == -1 )
     {
         int emptyLabel = GetEmptyLabelIndex( asm_s->labels, NumLabels );
-        if( emptyLabel == -1 ) return 0;
+        if( emptyLabel == -1 ) 
+        {   
+            printf( "Label array overflows...\n" );
+            return -1;
+        }
 
         SetLabel( &asm_s->labels[emptyLabel], (char*)(strForRead + numLeftIngSyms) /*name*/, len, ip );
     }

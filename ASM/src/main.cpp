@@ -41,7 +41,7 @@ int main( int argc, const char* argv[] )
 
     for (int i = 0; i < 2; i++) 
     {
-        AsmMakeArrCmds( &asm_s );
+        if( AsmMakeArrCmds( &asm_s ) == -1) return -1;
     }
 
     AsmMakeBinFile( &asm_s, fileOut );

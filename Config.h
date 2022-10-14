@@ -4,7 +4,7 @@
 //-----------------------------------------------------------------------------
 
 static const int NumRegs   = 5;
-static const int NumLabels = 20;
+static const int NumLabels = 200;
 static const int RamSize   = 100;
 
 // Not const for max size in scanf 

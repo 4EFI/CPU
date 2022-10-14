@@ -5,58 +5,110 @@ pop rbx
 in
 pop rcx
 
-call :CheckNullCoefs
-
-push -1
-push rbx
-mul
-push 2
-div
-pop [0]
-
-push rdx
-sqrt
-pop [1]
-
-push [0]
-push [1]
-add 
-out
-
-push [0]
-push [1]
-sub
-out
-
-noSolutions:
+call :SolveSquareEquation
 
 hlt
 
-CheckNullCoefs:
+SolveLinearEquation:
+	push rbx
+	push 0
+	je  :isNullB
+	jmp :isNotNullB	
+
+	isNullB:
+		push rcx
+		push 0 
+		je  :infLinearEqSolutions
+		jmp  :noLinearEqSolutions
+
+	isNotNullB:
+		push -1
+		push rcx
+		mul
+		push rbx
+		div
+		out
+		jmp :endSolveLinearEquation
+
+	infLinearEqSolutions:
+		jmp :endSolveLinearEquation
+	
+	noLinearEqSolutions:
+		jmp :endSolveLinearEquation	
+	
+	endSolveLinearEquation:			
+	ret
+
+SolveSquareEquation:
 	push rax
 	push 0
 	je  :isNullA	
+	jmp :isNotNullA
 
-	jne :isNotNullA
-
-	isNullA:
-		push rbx
-		push 0
-		je  :isNullB
-
-		jmp :isNotNullB	
-
-		isNullB:
-			push rbx
-			push 0 
-			jmp :end
+	isNullA:	
+		call :SolveLinearEquation
+		jmp :endSolveSquareEquation			
 
 	isNotNullA:
 		call :CountD
-		push rdx
-		out rdx
 
-	end:
+		push rdx
+		push 0
+		jb :noSolutions
+
+		push rdx
+		push 0
+		je  :oneSolution
+		jmp :twoSolutions
+
+	noSolutions:
+		jmp :endSolveSquareEquation
+
+	oneSolution:
+		push -1
+		push rbx
+		mul
+		push 2
+		div
+		push rax
+		div
+		out
+
+		jmp :endSolveSquareEquation
+
+	twoSolutions:
+		push rdx
+		sqrt	
+		pop rdx 
+
+		push -1 
+		push rbx
+		mul
+		push rdx
+		add 
+		push 2
+		div
+		push rax
+		div
+		out
+
+		push -1 
+		push rbx
+		mul
+		push rdx
+		sub 
+		push 2
+		div
+		push rax
+		div
+		out
+	
+		jmp :endSolveSquareEquation
+
+	infiniteSolutions:
+		jmp :endSolveSquareEquation
+
+	endSolveSquareEquation:		
 	ret
 
 CountD:
@@ -73,14 +125,4 @@ CountD:
 	sub
 	pop rdx
 
-	call :A 
-
 	ret
-
-A:
-	out [50]
-	ret
-
-
-
-

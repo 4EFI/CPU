@@ -59,6 +59,11 @@ DEF_CMD( OUT, 6,
     else
     {
         S_POP( 1 )
+        if( CompareDoubles( val_1, 0 ) ) 
+        {
+            val_1 = 0;
+        }
+
         printf( "%lf\n", double(val_1) );
     }
 })
