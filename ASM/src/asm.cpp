@@ -10,19 +10,19 @@
 #include "StrAlgorithms.h"
 #include "LOG.h"
 
-#define _STR(str) #str
-#define  STR(str) _STR(str)
+#define _STR( str ) #str
+#define  STR( str ) _STR( str )
 
 //-----------------------------------------------------------------------------
 
-int AsmCtor (ASM* asm_s)
+int AsmCtor( ASM* asm_s )
 {
-    if (asm_s == NULL) return 0;
+    if( asm_s == NULL ) return 0;
     
-    TextInit (&asm_s->text); 
+    TextInit( &asm_s->text ); 
 
     // Fill all with zero
-    memset (asm_s->labels, 0, NumLabels * sizeof (Label));
+    memset( asm_s->labels, 0, NumLabels * sizeof( Label ) );
 
     asm_s->codeSize = 0;
     asm_s->code     = NULL;
@@ -32,21 +32,21 @@ int AsmCtor (ASM* asm_s)
 
 //-----------------------------------------------------------------------------
 
-int AsmGetCmds (ASM* asm_s, FILE* fileIn)
+int AsmGetCmds( ASM* asm_s, FILE* fileIn )
 {
-    if (asm_s == NULL || fileIn == NULL) return 0;
+    if( asm_s == NULL || fileIn == NULL ) return 0;
     
-    long numStrs       = TextSetFileLines (&asm_s->text, fileIn); 
-    asm_s->codeSize = 2 * numStrs * sizeof (Elem_t); 
+    long numStrs       = TextSetFileLines( &asm_s->text, fileIn ); 
+    asm_s->codeSize = 2 * numStrs * sizeof( Elem_t ); 
 
-    asm_s->code = (char*)calloc (asm_s->codeSize, sizeof (char));
+    asm_s->code = (char*)calloc( asm_s->codeSize, sizeof( char ) );
 
     return 1;
 }
 
 //-----------------------------------------------------------------------------
 
-int AsmMakeArrCmds (ASM* asm_s)
+int AsmMakeArrCmds( ASM* asm_s )
 {   
     if( asm_s == NULL ) return 0;
 
@@ -54,41 +54,41 @@ int AsmMakeArrCmds (ASM* asm_s)
     
     int ip = 0;
     
-    for (int i = 0; i < asm_s->text.numLines; i++)
+    for( int i = 0; i < asm_s->text.numLines; i++ )
     {
         char cmdName[MaxStrLen] = "";
     
         char* strForRead = asm_s->text.lines[i].str;
 
         int numReadSyms = 0;
-        sscanf (strForRead, "%" STR(MaxStrLen) "s%n", cmdName, &numReadSyms); // Get command name
+        sscanf( strForRead, "%" STR(MaxStrLen) "s%n", cmdName, &numReadSyms ); // Get command name
 
-        if (numReadSyms == 0) continue;
+        if( numReadSyms == 0 ) continue;
 
         // Check label
         char* sym = strchr( cmdName, ':' ); 
         if( sym )
         {
-            AsmLabelHandler (asm_s, strForRead, sym - strForRead, ip);
+            AsmLabelHandler( asm_s, strForRead, sym - strForRead, ip );
             continue;
         }
 
         CMD* cmd = (CMD*)(&asm_s->code[ip]);
         
-        AsmArgHandler (asm_s, strForRead + numReadSyms /*Str for read from*/, &ip);
+        AsmArgHandler( asm_s, strForRead + numReadSyms /*Str for read from*/, &ip );
 
         // Compare commands
-        #define DEF_CMD(NAME, NUM, ...)        \
-            if (stricmp (cmdName, #NAME) == 0) \
-            {                                  \
-                cmd->code = NUM;               \
-            }                                  \
+        #define DEF_CMD( NAME, NUM, ... )        \
+            if( stricmp( cmdName, #NAME ) == 0 ) \
+            {                                    \
+                cmd->code = NUM;                 \
+            }                                    \
             else
 
         #include "Commands.h"
         /*else*/
         {
-            printf ("Command \"%s\" does not exist...\n", cmdName);
+            printf( "Command \"%s\" does not exist...\n", cmdName );
             return 0;
         }
 
@@ -108,20 +108,20 @@ int AsmMakeArrCmds (ASM* asm_s)
 
 //-----------------------------------------------------------------------------
 
-int AsmLabelHandler (ASM* asm_s, const char* str, int len, int ip)
+int AsmLabelHandler( ASM* asm_s, const char* str, int len, int ip )
 {
-    if (asm_s == NULL || str == NULL) return 0;
+    if( asm_s == NULL || str == NULL ) return 0;
 
-    int strPos = GetLabelIndex (asm_s->labels, NumLabels, str, len);
+    int strPos = GetLabelIndex( asm_s->labels, NumLabels, str, len );
 
-    if (strPos == -1)
+    if( strPos == -1 )
     {
         int emptyLabel = -1;
 
         // Find empty label
-        for (int i = 0; i < NumLabels; i++)
+        for( int i = 0; i < NumLabels; i++ )
         {
-            if (asm_s->labels[i].name.str == NULL) 
+            if( asm_s->labels[i].name.str == NULL ) 
             {
                 emptyLabel = i; 
                 break; 
@@ -158,14 +158,14 @@ int AsmArgJumpHandler( ASM* asm_s, const char* strForRead, int* ip )
         int len = 0;
         strForRead = sym + 1;
 
-        sscanf (strForRead, "%*s%n", &len);
+        sscanf( strForRead, "%*s%n", &len );
 
-        int pos = GetLabelIndex (asm_s->labels, NumLabels, strForRead, len);
+        int pos = GetLabelIndex( asm_s->labels, NumLabels, strForRead, len );
         if( pos == -1 ) return 1;
 
         *(Elem_t*)(asm_s->code + *ip) = asm_s->labels[pos].val;
         
-        (*ip) += sizeof (Elem_t); 
+        (*ip) += sizeof( Elem_t ); 
 
         cmd->immed = 1;
 
@@ -198,8 +198,8 @@ int AsmArgHandler( ASM* asm_s, const char* strForRead, int* ip )
     int numSkipSyms = 0;
     if( sym ) { isMemTreatment = true; numSkipSyms = sym - strForRead + 1; }
 
-    if/* */( sscanf (strForRead + numSkipSyms, "%lf + %" STR(MaxStrLen) "s",    &val,    reg_i) == 2 || 
-             sscanf (strForRead + numSkipSyms, " %" STR(MaxStrLen) "[^+] + %lf", reg_i, &val  ) == 2) 
+    if/* */( sscanf( strForRead + numSkipSyms, "%lf + %" STR(MaxStrLen) "s",    &val,    reg_i ) == 2 || 
+             sscanf( strForRead + numSkipSyms, " %" STR(MaxStrLen) "[^+] + %lf", reg_i, &val   ) == 2 ) 
     /* if (value + reg_value) || (reg_value + value) */
     {
         cmd->immed = 1;
@@ -207,38 +207,38 @@ int AsmArgHandler( ASM* asm_s, const char* strForRead, int* ip )
 
         *(Elem_t*)(asm_s->code + *ip) = val;
         
-        (*ip) += sizeof (Elem_t); 
+        (*ip) += sizeof( Elem_t ); 
 
-        asm_s->code[(*ip)++] = char(GetRegIndex (reg_i));
+        asm_s->code[(*ip)++] = char(GetRegIndex( reg_i ));
     }
 
-    else if( sscanf (strForRead + numSkipSyms, "%lf", &val) == 1) // if value
+    else if( sscanf( strForRead + numSkipSyms, "%lf", &val ) == 1 ) // if value
     {   
         cmd->immed = 1;
 
         *(Elem_t*)(asm_s->code + *ip) = val;
         
-        (*ip) += sizeof (Elem_t); 
+        (*ip) += sizeof( Elem_t ); 
     }
     
-    else if (sscanf (strForRead + numSkipSyms, "%" STR(MaxStrLen) "s", reg_i) == 1) // if register
+    else if( sscanf( strForRead + numSkipSyms, "%" STR(MaxStrLen) "s", reg_i ) == 1 ) // if register
     {    
         cmd->reg = 1;
 
-        asm_s->code[(*ip)++] = char(GetRegIndex (reg_i));
+        asm_s->code[(*ip)++] = char(GetRegIndex( reg_i ));
     }
 
     // Check ]
-    if (isMemTreatment && strchr (strForRead + numSkipSyms, ']')) cmd->memory = 1; 
+    if( isMemTreatment && strchr( strForRead + numSkipSyms, ']' ) ) cmd->memory = 1; 
 
     return 1;
 }
 
-int GetLabelIndex (Label* labels, int numLabels, const char* str, int len)
+int GetLabelIndex( Label* labels, int numLabels, const char* str, int len )
 {
-    for (int i = 0; i < numLabels; i++)
+    for( int i = 0; i < numLabels; i++ )
     {
-        if (labels[i].name.str != NULL && strncmp (str, labels[i].name.str, len) == 0)
+        if( labels[i].name.str != NULL && strncmp( str, labels[i].name.str, len ) == 0 )
         {
             return i;
         }
@@ -249,34 +249,34 @@ int GetLabelIndex (Label* labels, int numLabels, const char* str, int len)
 
 //-----------------------------------------------------------------------------
 
-int GetRegIndex (const char* reg)
+int GetRegIndex( const char* reg )
 {
-    if (reg == NULL) return 0;
+    if( reg == NULL ) return 0;
 
-    int numRightIgnSyms = NumRightIgnoredSyms (reg, " ]");
+    int numRightIgnSyms = NumRightIgnoredSyms( reg, " ]" );
 
-    int len = strlen (reg) - numRightIgnSyms;
+    int len = strlen( reg ) - numRightIgnSyms;
     
-    if /**/ (strnicmp (reg, "rax", len) == 0) return RAX;
-    else if (strnicmp (reg, "rbx", len) == 0) return RBX;
-    else if (strnicmp (reg, "rcx", len) == 0) return RCX;
-    else if (strnicmp (reg, "rdx", len) == 0) return RDX; 
+    if/* */( strnicmp( reg, "rax", len ) == 0 ) return RAX;
+    else if( strnicmp( reg, "rbx", len ) == 0 ) return RBX;
+    else if( strnicmp( reg, "rcx", len ) == 0 ) return RCX;
+    else if( strnicmp( reg, "rdx", len ) == 0 ) return RDX; 
 
-    printf ("Register \"%.*s\" does not exist...\n", len, reg);
+    printf( "Register \"%.*s\" does not exist...\n", len, reg );
 
     return 0;
 }
 
 //-----------------------------------------------------------------------------
 
-int AsmMakeBinFile (ASM* asm_s, FILE* fileOut)
+int AsmMakeBinFile( ASM* asm_s, FILE* fileOut )
 {   
-    if (asm_s == NULL || fileOut == NULL) return 0;
+    if( asm_s == NULL || fileOut == NULL ) return 0;
     
     // signature, version, number of commands -> out file
-    fprintf (fileOut, "%s %d %d\n", Signature, Version, asm_s->codeSize);
+    fprintf( fileOut, "%s %d %d\n", Signature, Version, asm_s->codeSize );
 
-    fwrite (asm_s->code, sizeof (char), asm_s->codeSize, fileOut);
+    fwrite( asm_s->code, sizeof( char ), asm_s->codeSize, fileOut );
     
     return 1;
 }

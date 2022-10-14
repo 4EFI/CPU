@@ -16,7 +16,7 @@ add
 pop rax
 
 push rax
-push 10
+push 6
 jbe :next
 
 push rbx
