@@ -159,6 +159,29 @@ int CpuRamDump( CPU* cpu, FILE* file )
 
 //-----------------------------------------------------------------------------
 
+int OutRam( CPU* cpu, int numSymsPerLine )
+{
+    if( cpu == NULL ) return 0;
+
+    for( int i = 0; i < RamSize; i++ )
+    {
+        if( cpu->RAM[i] == 0 )
+        {
+            printf( "." );
+        }
+        else
+        {
+            printf( "%c", int(cpu->RAM[i]) );
+        }
+
+        if( (i + 1) % numSymsPerLine == 0 ) printf( "\n" );
+    }
+
+    return 1;
+}
+
+//-----------------------------------------------------------------------------
+
 int CheckCompatibility( FILE* file )
 {
     if( file == NULL ) return 0;

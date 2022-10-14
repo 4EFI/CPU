@@ -74,6 +74,11 @@ DEF_CMD( POP, 7,
 {
     S_POP( 1 )
     *arg_ptr = val_1;
+
+    if( arg_ptr - cpu->RAM < RamSize && arg_ptr - cpu->RAM >= 0 )
+    {
+        OutRam( cpu, RamWidthSize );
+    }
 })
 
 //-----------------------------------------------------------------------------

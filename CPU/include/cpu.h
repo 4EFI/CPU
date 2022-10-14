@@ -27,6 +27,8 @@ int     CpuCmdDump    ( CPU* cpu, int ip, FILE* file );
 int     CpuRamDump    ( CPU* cpu,         FILE* file );
 int     CpuRegDump    ( CPU* cpu,         FILE* file );
 
+int OutRam( CPU* cpu, int numSymsPerLine );
+
 #ifdef NDUMP
     СpuDump( cpu ) ;
 #endif
