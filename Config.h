@@ -41,7 +41,7 @@ typedef double Elem_t;
 static char Signature[] = "SP"; // Super paper
 static int  Version     = 1;
 
-#define DEF_CMD(NAME, NUM, ...) \
+#define DEF_CMD( NAME, NUM, ... ) \
     CMD_##NAME = NUM, 
 
 enum CmdNames

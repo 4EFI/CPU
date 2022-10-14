@@ -16,16 +16,16 @@ const char* GetCurOptionStr()
 
 //-----------------------------------------------------------------------------
 
-int NumWordInArray (const char* word, const char* arr[], int sizeArr)
+int NumWordInArray( const char* word, const char* arr[], int sizeArr )
 {
     //{ ASSERT
-    assert (word != NULL);
-    assert (arr  != NULL);
+    assert( word != NULL );
+    assert( arr  != NULL );
     //}
 
-    for (int i = 0; i < sizeArr; i++)
+    for( int i = 0; i < sizeArr; i++ )
     {
-        if (strcmp (word, arr[i]) == 0)
+        if( strcmp( word, arr[i] ) == 0 )
         {
             return i;
         }
