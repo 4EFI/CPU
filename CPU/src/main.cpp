@@ -10,7 +10,7 @@ int main( int argc, const char* argv[] )
     FILE* file = NULL;
 
     if( argc > 1 ) file = fopen( argv[1], "rb" );
-
+    
     if( !file ) 
     {
         printf( "Cpu file opening error...\n" );

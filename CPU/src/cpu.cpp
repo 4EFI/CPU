@@ -62,11 +62,7 @@ Elem_t* CpuGetArg( CPU* cpu, int* ip, Elem_t* val )
     
     if( cmd.reg )
     {        
-        Elem_t temp = 0;
-        memcpy( &temp, &cpu->regs[cpu->code[*ip]], sizeof( Elem_t ) );
-
-        (*val) += temp;
-
+        (*val) +=  cpu->regs[cpu->code[*ip]];
         arg_ptr = &cpu->regs[cpu->code[*ip]];
 
         (*ip)++;
@@ -74,12 +70,7 @@ Elem_t* CpuGetArg( CPU* cpu, int* ip, Elem_t* val )
 
     if( cmd.memory )
     {
-        Elem_t temp = 0;
-        memcpy( &temp, &cpu->RAM[int(*val)], sizeof( Elem_t ) );
-
-        (*val) += temp;
-        
-        // Check val
+        (*val) +=  cpu->RAM[int(*val)];
         arg_ptr = &cpu->RAM[int(*val)];
     }
 
@@ -110,7 +101,7 @@ int CpuCmdsHandler( CPU* cpu )
             #include "Commands.h"
             default:
                 printf( "SIGILL\n" );
-                // Error
+                return -1;
                 break;
         }
 

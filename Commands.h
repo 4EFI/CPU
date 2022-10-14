@@ -1,40 +1,53 @@
 
 #include "dsl.h"
 
+//-----------------------------------------------------------------------------
+
 DEF_CMD( HLT, 0, 
 {
     return 0;
 })
+
+//-----------------------------------------------------------------------------
 
 DEF_CMD( PUSH, 1, 
 {
     S_PUSH( arg_val );
 })
 
+//-----------------------------------------------------------------------------
+
 DEF_CMD( ADD, 2, 
 {
-    // if( arg_val != NULL )
-    S_PUSH( S_POP + S_POP );
+    S_POP_VALUES
+    S_PUSH( val_1 + val_2 );
 })
+
+//-----------------------------------------------------------------------------
 
 DEF_CMD( SUB, 3, 
 {
-    Elem_t val_2 = S_POP, val_1 = S_POP;
-    
+    S_POP_VALUES
     S_PUSH( val_1 - val_2 );
 })
 
+//-----------------------------------------------------------------------------
+
 DEF_CMD ( MUL, 4, 
 {
-    S_PUSH( S_POP * S_POP );
+    S_POP_VALUES
+    S_PUSH( val_1 * val_2 );
 })
+
+//-----------------------------------------------------------------------------
 
 DEF_CMD( DIV, 5, 
 {
-    Elem_t val_2 = S_POP, val_1 = S_POP;
-                
+    S_POP_VALUES          
     S_PUSH( val_1 / val_2 );
 })
+
+//-----------------------------------------------------------------------------
 
 DEF_CMD( OUT, 6, 
 {
@@ -43,13 +56,22 @@ DEF_CMD( OUT, 6,
         if/* */( cmd.memory ) printf( "RAM[%d] = %g\n",  arg_ptr - cpu->RAM,  (double)(*arg_ptr) );
         else if( cmd.reg    ) printf( "Regs[%d] = %g\n", arg_ptr - cpu->regs, (double)(*arg_ptr) );
     }
-    else printf( "%lf\n", double(S_POP) );
+    else
+    {
+        S_POP( 1 )
+        printf( "%lf\n", double(val_1) );
+    }
 })
+
+//-----------------------------------------------------------------------------
 
 DEF_CMD( POP, 7, 
 {
-    *arg_ptr = S_POP;
+    S_POP( 1 )
+    *arg_ptr = val_1;
 })
+
+//-----------------------------------------------------------------------------
 
 // Jumpes
 DEF_CMD( JMP, 8,
@@ -60,14 +82,15 @@ DEF_CMD( JMP, 8,
 #define DEF_JMP( NAME, NUM, COND )                \
     DEF_CMD( NAME, NUM,                           \
     {                                             \
-        Elem_t val_2 = S_POP, val_1 = S_POP;      \
-                                                  \
+        S_POP_VALUES                              \
         if( val_1 COND val_2 ) ip = int(arg_val); \
     })
 
 #include "jumps.h"
 
 #undef DEF_JMP
+
+//-----------------------------------------------------------------------------
 
 DEF_CMD( IN, 15, 
 {
@@ -77,10 +100,15 @@ DEF_CMD( IN, 15,
     S_PUSH( val );
 })
 
+//-----------------------------------------------------------------------------
+
 DEF_CMD( SQRT, 16, 
 {
-    S_PUSH( sqrt( S_POP ) );
+    S_POP( 1 )
+    S_PUSH( sqrt( val_1 ) );
 })
+
+//-----------------------------------------------------------------------------
 
 DEF_CMD( CALL, 17,
 {
@@ -88,10 +116,14 @@ DEF_CMD( CALL, 17,
     ip = arg_val;
 })
 
+//-----------------------------------------------------------------------------
+
 DEF_CMD( RET, 18,
 {
     ip = S_RET_POP;
 })
+
+//-----------------------------------------------------------------------------
 
 DEF_CMD( DUMP, 31, 
 { 
@@ -107,6 +139,8 @@ DEF_CMD( DUMP, 31,
     PrintSyms( '-', NumDumpDividers, LogFile );
     fprintf  ( LogFile, "\n" );
 })
+
+//-----------------------------------------------------------------------------
 
 #undef S_POP
 #undef S_PUSH

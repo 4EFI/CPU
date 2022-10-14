@@ -5,11 +5,7 @@ pop rbx
 in
 pop rcx
 
-out [0]
-
-call :Abbb
-
-out [1]
+call :CheckNullCoefs
 
 push -1
 push rbx
@@ -32,38 +28,35 @@ push [1]
 sub
 out
 
-dump
+noSolutions:
 
 hlt
 
 CheckNullCoefs:
 	push rax
 	push 0
-	je :isNullA	
+	je  :isNullA	
 
-	push rax
-	push 0
 	jne :isNotNullA
 
 	isNullA:
 		push rbx
 		push 0
-		je :isNullB
-	
-		push rbx
-		push 0
-		jne :isNotNullB	
+		je  :isNullB
+
+		jmp :isNotNullB	
 
 		isNullB:
 			push rbx
 			push 0 
-			jne :isNullB
+			jmp :end
 
 	isNotNullA:
 		call :CountD
 		push rdx
-		out [0]
-	
+		out rdx
+
+	end:
 	ret
 
 CountD:
@@ -78,12 +71,14 @@ CountD:
 	mul
 	
 	sub
-	pop rdx 
+	pop rdx
+
+	call :A 
 
 	ret
 
-Abbb:
-	out [4]
+A:
+	out [50]
 	ret
 
 
