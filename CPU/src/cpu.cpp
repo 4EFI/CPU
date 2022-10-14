@@ -160,7 +160,7 @@ int CpuRamDump( CPU* cpu, FILE* file )
     if( cpu == NULL || file == NULL ) return 0;
 
     fprintf ( file, "RAM Dump():\n" );
-    PrintArк( cpu->RAM, RamSize, file );
+    PrintArr( cpu->RAM, RamSize, file );
 
     return 1;
 }

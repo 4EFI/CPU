@@ -70,7 +70,15 @@ DEF_CMD( JMP, 8,
 
 #undef DEF_JMP
 
-DEF_CMD( SQRT, 15, 
+DEF_CMD( IN, 15, 
+{
+    Elem_t val = 0;
+    scanf( "%lf", &val );
+    
+    S_PUSH( val );
+})
+
+DEF_CMD( SQRT, 16, 
 {
     S_PUSH( sqrt( S_POP ) );
 })
