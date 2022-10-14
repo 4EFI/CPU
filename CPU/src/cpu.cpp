@@ -26,16 +26,15 @@ int CpuCtor (CPU* cpu)
 
 //-----------------------------------------------------------------------------
 
-int CpuGetCmdsArr (CPU* cpu, FILE* file)
+int CpuGetCmdsArr( CPU* cpu, FILE* file )
 {
-    if (file == NULL || file == NULL) return 0;
+    if( file == NULL || file == NULL ) return 0;
     
-    fscanf (file, "%*s %*d");
-    fscanf (file, "%d ", &cpu->codeSize);
+    fscanf( file, "%d ", &cpu->codeSize );
 
-    cpu->code = (char*)calloc (cpu->codeSize, sizeof (char));
+    cpu->code = (char*)calloc( cpu->codeSize, sizeof( char ) );
 
-    fread (cpu->code, sizeof (char), cpu->codeSize, file);
+    fread( cpu->code, sizeof( char ), cpu->codeSize, file );
 
     return 1;
 }
@@ -164,6 +163,33 @@ int CpuRamDump (CPU* cpu, FILE* file)
 
     fprintf (file, "RAM Dump():\n");
     PrintArr (cpu->RAM, RamSize, file);
+
+    return 1;
+}
+
+//-----------------------------------------------------------------------------
+
+int CheckCompatibility( FILE* file )
+{
+    if( file == NULL ) return 0;
+
+    char signature[MaxStrLen] = "";
+    fscanf( file, "%s", signature);
+
+    if( strcmp( Signature, signature ) != 0 )
+    {
+        printf( "Incorrect signature...\n" );
+        return 0;
+    }
+
+    int version = 0;
+    fscanf( file, "%d", &version );
+
+    if( version != Version ) 
+    {
+        printf( "Incompatibility versions: ASM version - %d/CPU version - %d", version, Version );
+        return 0;
+    }
 
     return 1;
 }

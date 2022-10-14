@@ -15,13 +15,11 @@ int main(int argc, const char* argv[])
         printf ("Cpu file opening error...\n");
         return -1;
     }
-
-    if (file == NULL) printf ("File \"%s\" does not exist...\n", "" /*fileName*/);
+    
+    if( !CheckCompatibility( file ) ) return -1;
 
     CPU cpu = {0};
     CpuCtor (&cpu);
-
-    //CheckCompatibility (file);
 
     CpuGetCmdsArr  (&cpu, file);
     CpuCmdsHandler (&cpu);    

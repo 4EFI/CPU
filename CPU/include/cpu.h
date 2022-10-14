@@ -2,7 +2,6 @@
 #define CPU_H
 
 #include "Config.h"
-
 #include "Stack.h"
 
 //-----------------------------------------------------------------------------
@@ -33,7 +32,9 @@ int     CpuRegDump     (CPU* cpu,         FILE* file);
 
 //-----------------------------------------------------------------------------
 
-int PrintArr (Elem_t* arr, int arrSize, FILE* file);
+int CheckCompatibility( FILE* file );
+
+int PrintArr( Elem_t* arr, int arrSize, FILE* file );
 
 //-----------------------------------------------------------------------------
 
