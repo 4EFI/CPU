@@ -1,3 +1,6 @@
+in 
+pop rbx
+
 push 1
 pop rax
 
@@ -14,7 +17,7 @@ add
 pop rax
 
 push rax
-push 10
+push rbx
 jbe next:
 
 dump

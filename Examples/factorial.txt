@@ -3,6 +3,9 @@ pop rax
 push 1
 pop rbx
 
+in 
+pop rcx
+
 next:
 
 push rbx
@@ -16,7 +19,7 @@ add
 pop rax
 
 push rax
-push 6
+push rcx
 jbe :next
 
 push rbx

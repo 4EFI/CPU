@@ -1,8 +1,8 @@
-push 1
+in
 pop rax
-push 5
+in
 pop rbx
-push 1
+in
 pop rcx
 
 push rbx
