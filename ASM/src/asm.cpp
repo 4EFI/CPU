@@ -48,7 +48,9 @@ int AsmGetCmds (ASM* asm_s, FILE* fileIn)
 
 int AsmMakeArrCmds (ASM* asm_s)
 {   
-    if (asm_s == NULL) return 0;
+    if( asm_s == NULL ) return 0;
+
+    static int numCompilation = 0; 
     
     int ip = 0;
     
@@ -64,9 +66,8 @@ int AsmMakeArrCmds (ASM* asm_s)
         if (numReadSyms == 0) continue;
 
         // Check label
-        char* sym = strchr (cmdName, ':');
-
-        if (sym)
+        char* sym = strchr( cmdName, ':' ); 
+        if( sym )
         {
             AsmLabelHandler (asm_s, strForRead, sym - strForRead, ip);
             continue;
@@ -87,14 +88,20 @@ int AsmMakeArrCmds (ASM* asm_s)
         #include "Commands.h"
         /*else*/
         {
-            // Command does not exist
-            continue;
+            printf ("Command \"%s\" does not exist...\n", cmdName);
+            return 0;
         }
 
         #undef DEF_CMD
     }
 
     asm_s->codeSize = ip;
+
+    if( numCompilation == 0 ) 
+    {
+        numCompilation++;
+        AsmMakeArrCmds( asm_s );
+    }
 
     return 1;
 }
@@ -130,8 +137,7 @@ int AsmLabelHandler (ASM* asm_s, const char* str, int len, int ip)
     }
     else 
     {
-        printf ("Label \"%.*s\" already exists...\n", len, str);
-        return 0;
+        asm_s->labels[strPos].val = ip;
     }
 
     return 1;
