@@ -16,18 +16,22 @@ int main( int argc, const char* argv[] )
     // Set input file 
     if( argc > 1 ) fileIn = fopen( argv[1], "r" );
 
-    START_OPT_HANDLER( argc, argv )
-    {
-        OPT_HANDLER( "-o", SetFileOut( &fileOut ); )    
-    }
-
-    // Function that open a file in progress... 
+    // Function that open a file in progress... :)))
     if( !fileIn ) 
     {
         printf( "Asm file opening error...\n" );
         return -1;
     }
-    if( !fileOut ) fileOut = fopen( "a.code", "wb" );
+
+    START_OPT_HANDLER( argc, argv )
+    {
+        OPT_HANDLER( "-o", SetFileOut( &fileOut ); )    
+    }
+
+    if( !fileOut ) 
+    {
+        fileOut = fopen( "a.code", "wb" );
+    }
 
 
     ASM asm_s = { 0 };
@@ -35,7 +39,11 @@ int main( int argc, const char* argv[] )
 
     AsmGetCmds( &asm_s, fileIn );
 
-    AsmMakeArrCmds( &asm_s );
+    for (int i = 0; i < 2; i++) 
+    {
+        AsmMakeArrCmds( &asm_s );
+    }
+
     AsmMakeBinFile( &asm_s, fileOut );
 
     fclose( fileIn );

@@ -12,6 +12,7 @@ struct CPU
     Elem_t regs[NumRegs];
     
     Stack_t stack; 
+    Stack_t stkRetIP;
     
     int   codeSize;
     char* code;

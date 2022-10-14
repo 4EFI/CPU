@@ -1,6 +1,5 @@
 
-#define S_POP         StackPop ( &cpu->stack)
-#define S_PUSH( VAL ) StackPush( &cpu->stack, VAL )
+#include "dsl.h"
 
 DEF_CMD( HLT, 0, 
 {
@@ -44,7 +43,7 @@ DEF_CMD( OUT, 6,
         if/* */( cmd.memory ) printf( "RAM[%d] = %g\n",  arg_ptr - cpu->RAM,  (double)(*arg_ptr) );
         else if( cmd.reg    ) printf( "Regs[%d] = %g\n", arg_ptr - cpu->regs, (double)(*arg_ptr) );
     }
-    else printf( "%g\n", double(S_POP) );
+    else printf( "%lf\n", double(S_POP) );
 })
 
 DEF_CMD( POP, 7, 
@@ -66,7 +65,7 @@ DEF_CMD( JMP, 8,
         if( val_1 COND val_2 ) ip = int(arg_val); \
     })
 
-#include "Jumpes.h"
+#include "jumps.h"
 
 #undef DEF_JMP
 
@@ -81,6 +80,17 @@ DEF_CMD( IN, 15,
 DEF_CMD( SQRT, 16, 
 {
     S_PUSH( sqrt( S_POP ) );
+})
+
+DEF_CMD( CALL, 17,
+{
+    S_RET_PUSH( ip );
+    ip = arg_val;
+})
+
+DEF_CMD( RET, 18,
+{
+    ip = S_RET_POP;
 })
 
 DEF_CMD( DUMP, 31, 

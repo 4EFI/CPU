@@ -9,6 +9,7 @@
 #include "FileAlgorithms.h"
 #include "StrAlgorithms.h"
 #include "LOG.h"
+#include "dsl.h"
 
 #define _STR( str ) #str
 #define  STR( str ) _STR( str )
@@ -49,30 +50,27 @@ int AsmGetCmds( ASM* asm_s, FILE* fileIn )
 int AsmMakeArrCmds( ASM* asm_s )
 {   
     if( asm_s == NULL ) return 0;
-
-    static int numCompilation = 0; 
     
     int ip = 0;
     
     for( int i = 0; i < asm_s->text.numLines; i++ )
     {
-        char cmdName[MaxStrLen] = "";
-    
         char* strForRead = asm_s->text.lines[i].str;
+
+        // Check label
+        if( AsmLabelHandler( asm_s, strForRead, ip ) ) continue;
+        
+        
+        // Get command
+        char cmdName[MaxStrLen] = "";
 
         int numReadSyms = 0;
         sscanf( strForRead, "%" STR(MaxStrLen) "s%n", cmdName, &numReadSyms ); // Get command name
 
         if( numReadSyms == 0 ) continue;
 
-        // Check label
-        char* sym = strchr( cmdName, ':' ); 
-        if( sym )
-        {
-            AsmLabelHandler( asm_s, strForRead, sym - strForRead, ip );
-            continue;
-        }
 
+        // Command handler
         CMD* cmd = (CMD*)(&asm_s->code[ip]);
         
         AsmArgHandler( asm_s, strForRead + numReadSyms /*Str for read from*/, &ip );
@@ -97,47 +95,38 @@ int AsmMakeArrCmds( ASM* asm_s )
 
     asm_s->codeSize = ip;
 
-    if( numCompilation == 0 ) 
-    {
-        numCompilation++;
-        AsmMakeArrCmds( asm_s );
-    }
-
     return 1;
 }
 
 //-----------------------------------------------------------------------------
 
-int AsmLabelHandler( ASM* asm_s, const char* str, int len, int ip )
+int AsmLabelHandler( ASM* asm_s, const char* strForRead, int ip )
 {
-    if( asm_s == NULL || str == NULL ) return 0;
+    if( asm_s == NULL || strForRead == NULL ) return 0;
 
-    int strPos = GetLabelIndex( asm_s->labels, NumLabels, str, len );
+    // Get label
+    char label[MaxStrLen] = "";
+    
+    int len = 0;
+    sscanf( strForRead, "%s%n", label, &len );
 
-    if( strPos == -1 )
+    if( !strchr( label, ':' ) ) return 0; // Not label
+
+
+    int      numLeftIngSyms = NumLeftIgnoredSyms( strForRead, 0, " \t" ); 
+    len -= ( numLeftIngSyms + 1 ); // Skip left ignored symbols and ':'
+
+    int labelPos = GetLabelIndex( asm_s->labels, NumLabels, strForRead, len );
+    if( labelPos == -1 )
     {
-        int emptyLabel = -1;
+        int emptyLabel = GetEmptyLabelIndex( asm_s->labels, NumLabels );
+        if( emptyLabel == -1 ) return 0;
 
-        // Find empty label
-        for( int i = 0; i < NumLabels; i++ )
-        {
-            if( asm_s->labels[i].name.str == NULL ) 
-            {
-                emptyLabel = i; 
-                break; 
-            }
-        }
-
-        String* str_ptr = &asm_s->labels[emptyLabel].name;
-
-        str_ptr->str = (char*)str;
-        str_ptr->len = len;
-
-        asm_s->labels[emptyLabel].val = ip;
+        SetLabel( &asm_s->labels[emptyLabel], (char*)(strForRead + numLeftIngSyms) /*name*/, len, ip );
     }
     else 
     {
-        asm_s->labels[strPos].val = ip;
+        asm_s->labels[labelPos].val = ip;
     }
 
     return 1;
@@ -156,15 +145,15 @@ int AsmArgJumpHandler( ASM* asm_s, const char* strForRead, int* ip )
         CMD* cmd = (CMD*)(&asm_s->code[(*ip)++]);
         
         int len = 0;
-        strForRead = sym + 1;
+        strForRead = sym + 1; // Skip all before ':' and the ':'
 
         sscanf( strForRead, "%*s%n", &len );
 
         int pos = GetLabelIndex( asm_s->labels, NumLabels, strForRead, len );
-        if( pos == -1 ) return 1;
-
-        *(Elem_t*)(asm_s->code + *ip) = asm_s->labels[pos].val;
         
+        if( pos == -1 ) *(Elem_t*)(asm_s->code + *ip);
+        else            *(Elem_t*)(asm_s->code + *ip) = asm_s->labels[pos].val;
+
         (*ip) += sizeof( Elem_t ); 
 
         cmd->immed = 1;
@@ -205,9 +194,11 @@ int AsmArgHandler( ASM* asm_s, const char* strForRead, int* ip )
         cmd->immed = 1;
         cmd->reg   = 1;
 
+        /*
         *(Elem_t*)(asm_s->code + *ip) = val;
         
         (*ip) += sizeof( Elem_t ); 
+        */
 
         asm_s->code[(*ip)++] = char(GetRegIndex( reg_i ));
     }
@@ -234,7 +225,9 @@ int AsmArgHandler( ASM* asm_s, const char* strForRead, int* ip )
     return 1;
 }
 
-int GetLabelIndex( Label* labels, int numLabels, const char* str, int len )
+//-----------------------------------------------------------------------------
+
+int GetLabelIndex( Label labels[], int numLabels, const char* str, int len )
 {
     for( int i = 0; i < numLabels; i++ )
     {
@@ -249,11 +242,40 @@ int GetLabelIndex( Label* labels, int numLabels, const char* str, int len )
 
 //-----------------------------------------------------------------------------
 
+int GetEmptyLabelIndex( Label labels[], int numLabels )
+{
+    // Find empty label
+    for( int i = 0; i < numLabels; i++ )
+    {
+        if( labels[i].name.str == NULL ) 
+        {
+            return i;  
+        }
+    }
+
+    return -1;
+}
+
+//-----------------------------------------------------------------------------
+
+int SetLabel( Label* label, const char* name, int len, Elem_t val )
+{
+    if( label == NULL ) return 0;
+
+    label->name.str = (char*)name;
+    label->name.len = len;
+    label->val      = val;
+
+    return 1;
+}
+
+//-----------------------------------------------------------------------------
+
 int GetRegIndex( const char* reg )
 {
     if( reg == NULL ) return 0;
 
-    int numRightIgnSyms = NumRightIgnoredSyms( reg, " ]" );
+    int numRightIgnSyms = NumRightIgnoredSyms( reg, strlen( reg ), " ]" );
 
     int len = strlen( reg ) - numRightIgnSyms;
     

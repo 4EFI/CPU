@@ -12,7 +12,8 @@ int CpuCtor( CPU* cpu )
 {
     if( cpu == NULL ) return 0;
     
-    StackCtor( &cpu->stack, 1 );
+    StackCtor( &cpu->stack,    1 );
+    StackCtor( &cpu->stkRetIP, 1 );
 
     // Fill all with zero
     memset( cpu->RAM,  0, RamSize * sizeof( Elem_t ) );

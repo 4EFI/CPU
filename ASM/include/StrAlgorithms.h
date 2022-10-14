@@ -44,8 +44,8 @@ int DivideStr (char* str, String** arrStrs, char symNewLine = '\n');
 
 int GetNumStrs (const char* str, char symNewLine = '\n');
 
-int NumLeftIgnoredSyms  (const char* str, const char* ignoredSymbols = IgnoredSymbols);
-int NumRightIgnoredSyms (const char* str, const char* ignoredSymbols = IgnoredSymbols);
+int NumLeftIgnoredSyms  (const char* str, int pos, const char* ignoredSymbols = IgnoredSymbols);
+int NumRightIgnoredSyms (const char* str, int pos, const char* ignoredSymbols = IgnoredSymbols);
 
 char* CheckSymInStr (const char* str, char sym, const char* ignSyms);
 

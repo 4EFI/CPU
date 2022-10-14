@@ -5,18 +5,11 @@ pop rbx
 in
 pop rcx
 
-push rbx
-push rbx
-mul
- 
-push rax
-push rcx
-mul
-push 4
-mul
+out [0]
 
-sub
-pop rdx 
+call :Abbb
+
+out [1]
 
 push -1
 push rbx
@@ -41,7 +34,57 @@ out
 
 dump
 
+hlt
 
+CheckNullCoefs:
+	push rax
+	push 0
+	je :isNullA	
+
+	push rax
+	push 0
+	jne :isNotNullA
+
+	isNullA:
+		push rbx
+		push 0
+		je :isNullB
+	
+		push rbx
+		push 0
+		jne :isNotNullB	
+
+		isNullB:
+			push rbx
+			push 0 
+			jne :isNullB
+
+	isNotNullA:
+		call :CountD
+		push rdx
+		out [0]
+	
+	ret
+
+CountD:
+	push rbx
+	push rbx
+	mul
+ 
+	push rax
+	push rcx
+	mul
+	push 4
+	mul
+	
+	sub
+	pop rdx 
+
+	ret
+
+Abbb:
+	out [4]
+	ret
 
 
 

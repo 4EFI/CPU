@@ -64,8 +64,8 @@ long int TextSetFileLines (Text* text, FILE* file)
 
     for (int i = 0; i < text->numLines; i++)
     {
-        text->lines[i].numLeftIgnSyms  = NumLeftIgnoredSyms  (text->lines[i].str);
-        text->lines[i].numRightIgnSyms = NumRightIgnoredSyms (text->lines[i].str);
+        text->lines[i].numLeftIgnSyms  = NumLeftIgnoredSyms  (text->lines[i].str, 0);
+        text->lines[i].numRightIgnSyms = NumRightIgnoredSyms (text->lines[i].str, strlen( text->lines[i].str ) - 1);
     }
 
     text->isCopyLines = false;
@@ -148,7 +148,7 @@ int GetNumStrs (const char *str, char symNewLine)
 
 //-----------------------------------------------------------------------------
 
-int NumLeftIgnoredSyms (const char* str, const char* ignoredSymbols)
+int NumLeftIgnoredSyms (const char* str, int pos,  const char* ignoredSymbols)
 {
     //{ ASSERT
     assert (str            != NULL);
@@ -157,7 +157,7 @@ int NumLeftIgnoredSyms (const char* str, const char* ignoredSymbols)
 
     int numLeftIgnSyms = 0;
 
-    for (int i = 0; ; i++)
+    for (int i = pos; ; i++)
     {
         // If end of str
         if (str[i] == '\0') break;
@@ -172,26 +172,23 @@ int NumLeftIgnoredSyms (const char* str, const char* ignoredSymbols)
 
 //-----------------------------------------------------------------------------
 
-int NumRightIgnoredSyms (const char* str, const char* ignoredSymbols)
+int NumRightIgnoredSyms (const char* str, int pos, const char* ignoredSymbols)
 {
     //{ ASSERT
-    assert (str            != NULL);
-    assert (ignoredSymbols != NULL);
+    assert( str            != NULL );
+    assert( ignoredSymbols != NULL );
     //}
 
-    int lenStr = 0, lastStr = 0;
+    int numIgnoredSyms = 0;
 
-    for (int i = 0; ; i++)
+    for( int i = pos; i >= 0; i-- )
     {
-        // If end of str
-        if (str[i] == '\0') break;
+        if( str[i] == '\0' || !strchr( ignoredSymbols, str[i] ) ) break;
 
-        if (!strchr (ignoredSymbols, str[i])) lastStr = i;
-
-        lenStr++;
+        numIgnoredSyms++;
     }
 
-    return lenStr - (lastStr + 1);
+    return numIgnoredSyms;
 }
 
 //-----------------------------------------------------------------------------
