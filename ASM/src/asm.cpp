@@ -151,10 +151,8 @@ int AsmArgJumpHandler( ASM* asm_s, const char* strForRead, int* ip )
 
         int pos = GetLabelIndex( asm_s->labels, NumLabels, strForRead, len );
         
-        if( pos == -1 ) *(Elem_t*)(asm_s->code + *ip);
-        else            *(Elem_t*)(asm_s->code + *ip) = asm_s->labels[pos].val;
-
-        (*ip) += sizeof( Elem_t ); 
+        if( pos == -1 ) ASM_PUT_CODE( 0                      )
+        else            ASM_PUT_CODE( asm_s->labels[pos].val )
 
         cmd->immed = 1;
 
@@ -172,6 +170,7 @@ int AsmArgHandler( ASM* asm_s, const char* strForRead, int* ip )
 
     // Jump value handler
     if( AsmArgJumpHandler( asm_s, strForRead, ip ) ) return 1;
+
 
     // Regs & values handler
     CMD* cmd = (CMD*)(&asm_s->code[(*ip)++]);
@@ -194,11 +193,7 @@ int AsmArgHandler( ASM* asm_s, const char* strForRead, int* ip )
         cmd->immed = 1;
         cmd->reg   = 1;
 
-        /*
-        *(Elem_t*)(asm_s->code + *ip) = val;
-        
-        (*ip) += sizeof( Elem_t ); 
-        */
+        ASM_PUT_CODE( val )
 
         asm_s->code[(*ip)++] = char(GetRegIndex( reg_i ));
     }
@@ -207,16 +202,14 @@ int AsmArgHandler( ASM* asm_s, const char* strForRead, int* ip )
     {   
         cmd->immed = 1;
 
-        *(Elem_t*)(asm_s->code + *ip) = val;
-        
-        (*ip) += sizeof( Elem_t ); 
+        ASM_PUT_CODE( val )
     }
     
     else if( sscanf( strForRead + numSkipSyms, "%" STR(MaxStrLen) "s", reg_i ) == 1 ) // if register
     {    
         cmd->reg = 1;
 
-        asm_s->code[(*ip)++] = char(GetRegIndex( reg_i ));
+        asm_s->code[(*ip)++] = char( GetRegIndex( reg_i ) );
     }
 
     // Check ]
