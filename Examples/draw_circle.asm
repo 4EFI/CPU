@@ -3,10 +3,10 @@ Start:
 	in
 	pop rdx ; in R to rdx 
 	
-	call :DrawCircle
-
-	out [0]
+	call :DrawFillCircle
 	
+	in	
+
 	hlt
 
 DrawCircle:
@@ -26,11 +26,13 @@ DrawCircle:
 		sin
 		push rdx ; R
 		mul
-		pop rbx ; R*sin(a) 
+		push 1
+		mul 
+		pop rbx ; 1*R*sin(a) 
 		
 		call :PushRAM
 
-		push 0.05
+		push 0.05 ; step
 		push rax
 		add
 		pop rax
@@ -66,4 +68,22 @@ PushRAM:
     pop [rbx]
 
     ret
+
+DrawFillCircle:
+	nextFillCircle:
+		push rdx
+		push 0
+		jbe :endDrawFillCircle
+
+		call :DrawCircle
+
+		push rdx
+		push 0.5
+		sub
+		pop rdx
+
+		jmp :nextFillCircle
+	
+	endDrawFillCircle:
+	ret
 
