@@ -39,6 +39,11 @@ int CheckCompatibility( FILE* file );
 
 int PrintArr( Elem_t* arr, int arrSize, FILE* file );
 
+bool ClearConsole();
+
+void SetCursorVisible( bool visible );
+void SetCursorPosition( int x, int y );
+
 //-----------------------------------------------------------------------------
 
 #endif

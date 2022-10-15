@@ -5,6 +5,8 @@ Start:
 	
 	call :DrawCircle
 
+	out [0]
+	
 	hlt
 
 DrawCircle:
@@ -24,16 +26,7 @@ DrawCircle:
 		sin
 		push rdx ; R
 		mul
-		pop rbx ; R*sin(a)
-
-
-		push rax
-		out
-		push rcx 
-		out
-		push rbx
-		out
- 
+		pop rbx ; R*sin(a) 
 		
 		call :PushRAM
 
@@ -68,9 +61,6 @@ PushRAM:
 	add
  
 	pop rbx
-
-	push rbx
-	out 
             
 	push 42 ; symbol '*' 
     pop [rbx]

@@ -164,6 +164,8 @@ int OutRam( CPU* cpu, int numSymsPerLine )
 {
     if( cpu == NULL ) return 0;
 
+    SetCursorPosition( 0, 0 );
+    
     for( int i = 0; i < RamSize; i++ )
     {
         if( cpu->RAM[i] == 0 )
@@ -223,3 +225,49 @@ int PrintArr( Elem_t* arr, int arrSize, FILE* file )
 }
 
 //-----------------------------------------------------------------------------
+
+bool ClearConsole()
+{
+    HANDLE out = GetStdHandle( STD_OUTPUT_HANDLE );
+
+    CONSOLE_SCREEN_BUFFER_INFO  con = {};
+    GetConsoleScreenBufferInfo( out, &con );
+
+    COORD start = { con.srWindow.Left, con.srWindow.Top };
+
+    DWORD len   = ( con.srWindow.Right  - con.srWindow.Left + 1 ) *
+                  ( con.srWindow.Bottom - con.srWindow.Top  + 1 );
+
+    DWORD written = 0;
+    FillConsoleOutputCharacter( out, 0x20 /*' '*/,    len, start, &written );  //-V112
+    FillConsoleOutputAttribute( out, con.wAttributes, len, start, &written );
+
+    SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), start );
+
+    return written == len;
+}
+
+//-----------------------------------------------------------------------------
+
+// Cursor functions
+void SetCursorPosition( int x, int y ) 
+{
+    COORD  pos    = {x, y};
+    HANDLE handle = GetStdHandle( STD_OUTPUT_HANDLE );
+    SetConsoleCursorPosition( handle, pos );
+}
+
+//-----------------------------------------------------------------------------
+
+void SetCursorVisible( bool visible )
+{
+    HANDLE handle = GetStdHandle( STD_OUTPUT_HANDLE );
+    CONSOLE_CURSOR_INFO structCursorInfo;
+
+    GetConsoleCursorInfo( handle, &structCursorInfo );
+    structCursorInfo.bVisible = visible;
+    SetConsoleCursorInfo( handle, &structCursorInfo );
+}
+
+//-----------------------------------------------------------------------------
+

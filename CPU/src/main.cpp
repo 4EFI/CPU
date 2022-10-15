@@ -19,6 +19,8 @@ int main( int argc, const char* argv[] )
     
     if( !CheckCompatibility( file ) ) return -1;
 
+    SetCursorVisible( false );
+
     CPU cpu = {0};
     CpuCtor( &cpu );
 
