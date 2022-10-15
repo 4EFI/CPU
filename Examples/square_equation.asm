@@ -1,13 +1,15 @@
-in
-pop rax
-in
-pop rbx
-in
-pop rcx
 
-call :SolveSquareEquation
+Start:
+	in
+	pop rax
+	in
+	pop rbx
+	in
+	pop rcx
 
-hlt
+	call :SolveSquareEquation
+
+	hlt
 
 SolveLinearEquation:
 	push rbx
@@ -31,9 +33,13 @@ SolveLinearEquation:
 		jmp :endSolveLinearEquation
 
 	infLinearEqSolutions:
+		push -1
+		out
 		jmp :endSolveLinearEquation
 	
 	noLinearEqSolutions:
+		push 0.1
+		out
 		jmp :endSolveLinearEquation	
 	
 	endSolveLinearEquation:			
@@ -47,7 +53,7 @@ SolveSquareEquation:
 
 	isNullA:	
 		call :SolveLinearEquation
-		jmp :endSolveSquareEquation			
+		jmp  :endSolveSquareEquation			
 
 	isNotNullA:
 		call :CountD
@@ -62,6 +68,8 @@ SolveSquareEquation:
 		jmp :twoSolutions
 
 	noSolutions:
+		push 0.2
+		out
 		jmp :endSolveSquareEquation
 
 	oneSolution:
@@ -106,6 +114,8 @@ SolveSquareEquation:
 		jmp :endSolveSquareEquation
 
 	infiniteSolutions:
+		push -2
+		out
 		jmp :endSolveSquareEquation
 
 	endSolveSquareEquation:		

@@ -211,7 +211,7 @@ int AsmArgHandler( ASM* asm_s, const char* strForRead, int* ip )
         ASM_PUT_CODE( val )
     }
     
-    else if( sscanf( strForRead + numSkipSyms, "%" STR(MaxStrLen) "s", reg_i ) == 1 ) // if register
+    else if( sscanf( strForRead + numSkipSyms, " %" STR(MaxStrLen) "s ", reg_i ) == 1 ) // if register
     {    
         cmd->reg = 1;
 
@@ -274,7 +274,7 @@ int GetRegIndex( const char* reg )
 {
     if( reg == NULL ) return 0;
 
-    int numRightIgnSyms = NumRightIgnoredSyms( reg, strlen( reg ), " ]" );
+    int numRightIgnSyms = NumRightIgnoredSyms( reg, strlen( reg ) - 1, " ]" );
 
     int len = strlen( reg ) - numRightIgnSyms;
     

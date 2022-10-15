@@ -1,17 +1,26 @@
-in 
-pop rax
 
-push 1
-pop rbx 
+Start:
+	in 
+	call :Factorial
+	out
 
-call :Factorial
+	hlt
 
-hlt
+Factorial:
+	pop rax
 
-Factorial:  	
+	push 1
+	pop rbx
+
+	call :DoFactorial
+	push rbx
+
+	ret
+
+DoFactorial:  	
 	push 0
 	push rax
-	je :outFactorial
+	je :endDoFactorial
 
 	push rbx
     push rax
@@ -23,14 +32,9 @@ Factorial:
 	add
 	pop rax
 
-	call :Factorial	
-	jmp :endFactorial
+	call :DoFactorial	
 
-	outFactorial:
-		push rbx
-		out     	
-	
-	endFactorial:
+	endDoFactorial:
 	ret
 
          

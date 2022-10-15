@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <Windows.h>
 
 #include "cpu.h"
 #include "LOG.h"
@@ -62,16 +63,16 @@ Elem_t* CpuGetArg( CPU* cpu, int* ip, Elem_t* val )
     
     if( cmd.reg )
     {        
-        (*val) +=  cpu->regs[cpu->code[*ip]];
-        arg_ptr = &cpu->regs[cpu->code[*ip]];
+        (*val) +=  cpu->regs[int( cpu->code[*ip] )];
+        arg_ptr = &cpu->regs[int( cpu->code[*ip] )];
 
         (*ip)++;
     }
 
     if( cmd.memory )
     {
-        (*val) +=  cpu->RAM[int(*val)];
         arg_ptr = &cpu->RAM[int(*val)];
+        (*val)  =  cpu->RAM[int(*val)];
     }
 
     return arg_ptr;  
