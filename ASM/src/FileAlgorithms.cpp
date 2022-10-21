@@ -19,7 +19,7 @@ bool OpenFile( FILE** file, const char* fileName,
 
     if( !(*file) )
     {
-        printf( "Error while openning the file: \"%s\" with \"%s\" mode...\n", fileName, typeOpen );  
+        printf( "Error while opening the file: \"%s\" with \"%s\" mode...\n", fileName, typeOpen );  
         
         return 0; 
     }

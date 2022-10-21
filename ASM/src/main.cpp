@@ -24,7 +24,7 @@ int main( int argc, const char* argv[] )
     if( OpenFile( &fileIn, argv[1], "r" ) ) return -1;
 
     START_OPT_HANDLER( argc, argv )
-    {`
+    {
         OPT_HANDLER( "-o", SetFileOut( &fileOut ); )    
     }
 
