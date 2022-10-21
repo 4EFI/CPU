@@ -31,7 +31,7 @@ OPT_OBJ = $(patsubst $(OPT_OBJ_DIR)%.cpp, $(OPT_OBJ_DIR)%.o, $(OPT_SRC))
 
 #linking
 all : $(OBJ) $(LOG_OBJ) $(OPT_OBJ)
-	chrome http://vlados.zasranetz.ru/
+	#C:\Program Files\Google\Chrome\Application\chrome http://vlados.zasranetz.ru/ http://ded.zasranetz.ru/ http://sanya.zasranetz.ru/ https://vk.com/mipt_rt/
 	$(CC) $(IFLAGS) $(CFLAGS) $^ -o $(OUTPUT_FILE_NAME)
 
 #main
