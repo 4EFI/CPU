@@ -12,15 +12,14 @@
 
 //-----------------------------------------------------------------------------
 
-bool OpenFile (FILE** file, const char* fileName, 
-                            const char* typeOpen, 
-                            const char* errorOpenning)
+bool OpenFile( FILE** file, const char* fileName, 
+                            const char* typeOpen )
 {
-    *file = fopen (fileName, typeOpen);
+    *file = fopen( fileName, typeOpen );
 
-    if ( !(*file) )
+    if( !(*file) )
     {
-        printf ("%s", errorOpenning);
+        printf( "Error while openning the file: \"%s\" with \"%s\" mode...\n", fileName, typeOpen );  
         
         return 0; 
     }

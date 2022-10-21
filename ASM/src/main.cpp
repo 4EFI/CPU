@@ -12,26 +12,23 @@ int main( int argc, const char* argv[] )
 {
     FILE* fileIn  = NULL;
     FILE* fileOut = NULL;
-
-    // Set input file 
-    if( argc > 1 ) fileIn = fopen( argv[1], "r" );
-
-    // Function that open a file in progress... :)))
-    if( !fileIn ) 
+ 
+    // No input file name
+    if( argc <= 1 ) 
     {
-        printf( "Asm file opening error...\n" );
+        printf( "To few arguments...\n" );
         return -1;
     }
 
+    // Set input file
+    if( OpenFile( &fileIn, argv[1], "r" ) ) return -1;
+
     START_OPT_HANDLER( argc, argv )
-    {
+    {`
         OPT_HANDLER( "-o", SetFileOut( &fileOut ); )    
     }
 
-    if( !fileOut ) 
-    {
-        fileOut = fopen( "a.code", "wb" );
-    }
+    if( !fileOut ) fileOut = fopen( "a.code", "wb" );
 
 
     ASM asm_s = { 0 };

@@ -67,7 +67,7 @@ int AsmMakeArrCmds( ASM* asm_s )
         char cmdName[MaxStrLen] = "";
 
         int numReadSyms = 0;
-        sscanf( strForRead, "%" STR(MaxStrLen) "s%n", cmdName, &numReadSyms ); // Get command name
+        sscanf( strForRead, " %n%" STR(MaxStrLen) "s%n", cmdName, &numReadSyms ); // Get command name
 
         if( numReadSyms == 0 ) continue;
 

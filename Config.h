@@ -9,8 +9,6 @@ static const int NumLabels     = 200;
 static const int RamWidthSize  = 60;
 static const int RamHeightSize = 30; 
 static const int RamSize       = RamWidthSize * RamHeightSize;
-
-// Not const for max size in scanf 
 #define MaxStrLen 255 
 
 static int NumDumpDividers = 65;

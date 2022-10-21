@@ -27,9 +27,7 @@ DoFactorial:
 	mul
 	pop rbx
 
-	push rax
-	push -1
-	add
+	push rax + -1 ; Hehe
 	pop rax
 
 	call :DoFactorial	

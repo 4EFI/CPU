@@ -32,9 +32,7 @@ DrawCircle:
 		
 		call :PushRAM
 
-		push 0.05 ; step
-		push rax
-		add
+		push rax + 0.05 ; step
 		pop rax
 
 		push rax
@@ -77,10 +75,8 @@ DrawFillCircle:
 
 		call :DrawCircle
 
-		push rdx
-		push 0.5
-		sub
-		pop rdx
+		push rdx + -0.5 ; Hehe
+		pop  rdx
 
 		jmp :nextFillCircle
 	
