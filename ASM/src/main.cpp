@@ -3,6 +3,7 @@
 #include "asm.h"
 #include "LOG.h"
 #include "OptionsCmdLine.h"
+#include "FileAlgorithms.h"
 
 int SetFileOut( FILE** fileOut );
 
